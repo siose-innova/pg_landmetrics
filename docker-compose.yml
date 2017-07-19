@@ -1,0 +1,51 @@
+version: '2'
+services:
+  db:
+    # comment on build if want to use the dockerhub build
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: siose-innova/pg_landmetrics-test
+    container_name: landmetrics-test
+    ports:
+      - "5433:5432" # redirect to 5433 in case you already have postgres installed
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: lm
+    volumes: # named volumes, use compose -v to remove them.
+      - .:/source
+      - postgres_data:/var/lib/postgresql/:rw
+      - postgres_backups:/backups
+    networks:
+      - backend
+    restart: unless-stopped
+
+  pgadmin:
+    image: fenglc/pgadmin4:latest
+    container_name: pgadmin
+    links:
+      - db
+    volumes:
+      - /data/pgadmin:/root/.pgadmin # pgadmin4 user and session data (SQLITE)
+    ports:
+      - "5050:5050"
+    environment:
+      DEFAULT_USER: pgadmin4@pgadmin.org
+      DEFAULT_PASSWORD: admin
+
+    networks:
+      - backend
+    depends_on:
+      - db
+    restart: unless-stopped
+
+volumes: # named volumes that can be mounted by other containers
+  postgres_data:
+    driver: local
+  postgres_backups:
+    driver: local
+
+networks:
+  backend:
+    driver: bridge

@@ -1,0 +1,41 @@
+{
+   "name": "pg_landmetrics",
+   "abstract": "A PostgreSQL extension for calculating landscape metrics.",
+   "description": "A PostgreSQL extension for calculating landscape metrics.",
+   "version": "0.0.1",
+   "maintainer": [
+      "Benito M. Zaragozí <benizar@gmail.com>"
+   ],
+   "license": "GPL3",
+   "provides": {
+      "pg_landmetrics": {
+         "abstract": "A PostgreSQL extension for calculating landscape metrics.",
+         "file": "pg_landmetrics.sql",
+         "docfile": "doc/pg_landmetrics.md",
+         "version": "0.0.1"
+      }
+   },
+   "resources": {
+      "homepage": "http://www.siose-innova.es/",
+      "bugtracker": {
+         "web": "https://github.com/siose-innova/pg_landmetrics/issues"
+      },
+      "repository": {
+        "url":  "git://github.com/siose-innova/pg_landmetrics.git",
+        "web":  "https://github.com/siose-innova/pg_landmetrics",
+        "type": "git"
+      }
+   },
+   "generated_by": "Benito M. Zaragozí",
+   "meta-spec": {
+      "version": "1.0.0",
+      "url": "http://pgxn.org/meta/spec.txt"
+   },
+   "tags": [
+      "landscape metrics",
+      "geospatial",
+      "charts",
+      "statistics",
+      "geojson"
+   ]
+}
