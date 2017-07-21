@@ -1,4 +1,5 @@
-# pg_landmetrics: Una extensión de Postgres/PostGIS para el cálculo de ...
+# pg_landmetrics
+Una extensión de Postgres/PostGIS para el cálculo de ...
 
 One Paragraph of project description goes here
 
