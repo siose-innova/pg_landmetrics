@@ -1,6 +1,5 @@
 ## Name
-ST_Area
-: Devuelve la suma del área (m²) del polígono dividido por 10,000 (unidades: Hectáreas).
+lm.patch_area --  Devuelve la suma del área (m²) del polígono dividido por 10,000 (unidades: Hectáreas).
 
 ## Synopsis
 
@@ -20,7 +19,7 @@ Descripción más elaborada, con ejemplos de uso en la literatura científica. �
 
 
 ```sql
-SELECT St_Area(col_name *geometry*)/10000 FROM table_name;
+SELECT St_Area(col_name geometry)/10000 FROM table_name;
 ```
 
 ## Referencias
