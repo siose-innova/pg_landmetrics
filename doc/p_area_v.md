@@ -4,7 +4,7 @@ Descripción: es igual a la suma del área del polígono dividido por 10,000 (pa
 
 Unidades: Hectáreas.
 
-\[AREA= a_{ij}\left ( \frac{1}{10,000} \right )\]
+$$\[AREA= a_{ij}\left ( \frac{1}{10,000} \right )\]
 
 #### Sección de SQL
 
