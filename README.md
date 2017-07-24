@@ -7,9 +7,9 @@ One Paragraph of project description goes here
 
 La lista de métricas actualmente disponibles en pg_landmetrics es la siguiente:
 
-| Métrica | Función | Description |
+| Métrica | Función | Detalles |
 | --- | --- | --- |
-| `AREA` | p_area_v | [View](doc/p_area_v.md) |
+| `AREA` | p_area_v(geom) | [Ver ficha](doc/p_area_v.md) |
 | `CORE AREA` | p_corearea_v | Show file differences that **haven't been** staged |
 
 
