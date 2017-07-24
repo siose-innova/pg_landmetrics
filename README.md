@@ -3,6 +3,18 @@ Una extensión de Postgres/PostGIS para el cálculo de ...
 
 One Paragraph of project description goes here
 
+
+
+La lista de métricas actualmente disponibles en pg_landmetrics es la siguiente:
+
+| Métrica | Función | Description |
+| --- | --- | --- |
+| `AREA` | p_area_v | [View](doc/p_area_v.md) |
+| `CORE AREA` | p_corearea_v | Show file differences that **haven't been** staged |
+
+
+
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
