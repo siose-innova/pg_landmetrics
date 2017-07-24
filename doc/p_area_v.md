@@ -1,6 +1,7 @@
 ## Patch Area (vectorial)
 
 Descripción: es igual a la suma del área del polígono dividido por 10,000 (para convertir a hectáreas).
+
 Unidades: Hectáreas.
 
 \[AREA= a_{ij}\left ( \frac{1}{10,000} \right )\]
