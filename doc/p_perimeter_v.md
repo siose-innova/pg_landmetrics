@@ -3,7 +3,9 @@ lm.patch_perimeter --  Devuelve el perímetro del polígono, incluyendi algún v
 
 ## Synopsis
 
-> float p_perimeter(geometry *geom*);
+```sql
+float p_perimeter(geometry *geom*);
+```
 
 ```tex
 \[\mathrm{{PERIM}= {p_{_{ij}} }}\]
