@@ -18,7 +18,6 @@ Descripción más elaborada, con ejemplos de uso en la literatura científica. �
 
 ## Ejemplos (autocontenidos)
 
-
 ```sql
 SELECT St_Perimeter (col_name geometry) FROM table_name;
 ```
