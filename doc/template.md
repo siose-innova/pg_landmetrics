@@ -1,4 +1,4 @@
-## Name
+## Nombre
 lm.escala_nombre metrica --  Descripción del funcionamiento de la métrica. Devuelve...
 
 ## Synopsis
@@ -9,9 +9,9 @@ lm.escala_nombre metrica --  Descripción del funcionamiento de la métrica. Dev
 fórmula matemática de la métrica
 ```
 
-## Description
+## Descripción
 
-This formula also can be calculated in raster form.
+Esta fórmula también se puede calcular en formato ráster.
 
 Descripción más elaborada, con ejemplos de uso en la literatura científica. ¿En qué casos ha sido útil (significaba algo)?
 
