@@ -4,7 +4,7 @@ lm.patch_perimeter --  Devuelve el perímetro del polígono, incluyendi algún v
 ## Synopsis
 
 ```sql
-float p_perimeter(geometry *geom*);
+float p_perimeter(geometry geom);
 ```
 
 ```tex
