@@ -3,7 +3,9 @@ lm.patch_area --  Devuelve la suma del área (m²) del polígono dividido por 10
 
 ## Synopsis
 
-> float p_area(geometry *geom*);
+```sql
+float p_area(geometry *geom*);
+```
 
 ```tex
 \[\mathrm{AREA}= {a_{ij}}\left ( \frac{1}{10,000} \right )\]
