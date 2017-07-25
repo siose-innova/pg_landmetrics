@@ -1,5 +1,5 @@
 ## Nombre
-lm.patch_perimeter --  Devuelve el perímetro del polígono, incluyendo algún vacío interno (unidades: Metros). 
+lm.patch_perimeter --  Devuelve el perímetro del polígono, incluyendi algún vacío interno (unidades: Metros).
 
 ## Synopsis
 
@@ -17,6 +17,7 @@ Descripción más elaborada, con ejemplos de uso en la literatura científica. �
 
 
 ## Ejemplos (autocontenidos)
+
 
 ```sql
 SELECT St_Perimeter (col_name geometry) FROM table_name;
