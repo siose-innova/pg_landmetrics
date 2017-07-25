@@ -4,9 +4,9 @@ lm.patch_perimarearatio --  Devuelve la relación entre el perímetro (m) del po
 ## Synopsis
 
 ```sql
-float p_perimeter(geometry *geom*);
+float p_perimeter(geometry geom);
 
-float p_area(geometry *geom*);
+float p_area(geometry geom);
 ```
 
 ```tex
