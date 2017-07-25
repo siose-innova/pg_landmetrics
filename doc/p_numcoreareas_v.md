@@ -3,6 +3,7 @@ lm.patch_numcoreareas --  Devuelve el número de núcleos de las áreas disyunti
 
 ## Synopsis
 
+geometry p_numcoreareas(geometry geom, float radius_buffer);
 integer p_numcoreareas(geometry geom);
 
 ```tex
