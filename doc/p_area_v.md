@@ -11,7 +11,7 @@ lm.patch_area --  Devuelve la suma del área (m²) del polígono dividido por 10
 7 
 ## Descripción
 
-This formula also can be calculated in raster form.
+Esta fórmula también se puede calcular en formato ráster.
 
 Descripción más elaborada, con ejemplos de uso en la literatura científica. ¿En qué casos ha sido útil (significaba algo)?
 
