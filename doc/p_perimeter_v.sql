@@ -6,7 +6,7 @@ lm.patch_perimeter --  Devuelve el perímetro del polígono, incluyendo algún v
 > float p_perimeter(geometry *geom*);
 
 ```tex
-\[\mathrm{PERIM}= \mathrm{p_{_{ij}} }\]
+\[\mathrm{{PERIM}= {p_{_{ij}} }}\]
 ```
 
 ## Descripción
