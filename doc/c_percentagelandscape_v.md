@@ -7,7 +7,7 @@ float c_percentagelandscape(geometry geom);
 ```
 
 ```tex
-\mathrm{PLAND= P_{i}= \frac{\sum_{j=1}^{n}a_{ij}}{A}\left ( 100 \right )}
+\[PLAND= P_{i}= \frac{\sum_{j=1}^{n}a_{ij}}{A}\left ( 100 \right )\]
 ```
 
 ## Descripción
