@@ -3,7 +3,9 @@ lm.escala_nombre metrica --  Descripción del funcionamiento de la métrica. Dev
 
 ## Synopsis
 
-> float métrica(geometry *geom*);
+```sql
+float métrica(geometry *geom*);
+```
 
 ```tex
 fórmula matemática de la métrica
