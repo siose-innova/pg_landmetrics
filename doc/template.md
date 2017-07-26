@@ -4,7 +4,7 @@ lm.escala_nombre metrica --  Descripción del funcionamiento de la métrica. Dev
 ## Synopsis
 
 ```sql
-float métrica(geometry *geom*);
+float métrica(geometry geom);
 ```
 
 ```tex
