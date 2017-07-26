@@ -4,9 +4,7 @@ lm.patch_shape --  Devuelve el perímetro (m) del polígono dividido por la raí
 ## Synopsis
 
 ```sql
-float p_perimeter(geometry geom);
-
-float p_area(geometry geom);
+float p_shape(geometry geom);
 ```
 
 ```tex
