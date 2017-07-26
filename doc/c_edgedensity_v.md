@@ -7,7 +7,7 @@ float c_edgedensity(geometry geom);
 ```
 
 ```tex
-\mathrm{ED= \frac{\sum_{k=1}^{m} e_{ik}}{A}\left ( 10,000 \right )}
+\[ED= \frac{\sum_{k=1}^{m} e_{ik}}{A}\left ( 10,000 \right )\]
 ```
 
 ## Descripción
