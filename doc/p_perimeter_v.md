@@ -8,7 +8,7 @@ float p_perimeter(geometry geom);
 ```
 
 ```tex
-\[\mathrm{{PERIM}= {p_{_{ij}} }}\]
+\[{{PERIM}= {p_{_{ij}} }}\]
 ```
 
 ## Descripción
