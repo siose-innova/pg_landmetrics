@@ -10,7 +10,7 @@ geometry p_coreareaindex(geometry geom, float radius_buffer);
 ```
 
 ```tex
-\[\mathrm{CAI= \frac{a_{ij}^{c}}{a_{ij}}\left ( 100 \right )}\]
+\[CAI= {\frac{a_{ij}^{c}}{a_{ij}}\left ( 100 \right )}\]
 ```
 
 ## Descripción
