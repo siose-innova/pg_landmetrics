@@ -8,7 +8,7 @@ float c_totalarea(geometry geom);
 ```
 
 ```tex
-\[CA= {\sum_{j=1}^{n} a_{ij}\left ( \frac{1}{10,000} \right )}\]
+\[CA= \sum_{j=1}^{n} a_{ij}\left ( \frac{1}{10,000} \right )\]
 ```
 
 ## Descripción
