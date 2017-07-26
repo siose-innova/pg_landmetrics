@@ -10,7 +10,7 @@ integer p_numcoreareas(geometry geom);
 ```
 
 ```tex
-\[\mathrm{NCORE= n_{ij}^{c}}\]
+\[NCORE= n_{ij}^{c}\]
 ```
 
 ## Descripción
