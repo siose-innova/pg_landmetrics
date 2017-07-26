@@ -7,7 +7,7 @@ float c_totaledge(geometry geom);
 ```
 
 ```tex
-\[\mathrm{TE= \sum_{k=1}^{m} e_{ik}}\]
+\[TE= {\sum_{k=1}^{m} e_{ik}}\]
 ```
 
 ## Descripción
