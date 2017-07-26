@@ -8,7 +8,7 @@ float p_perimarearatio(geometry geom);
 ```
 
 ```tex
-\[\mathrm{PARA= \frac{p_{ij}}{a_{ij}}}\]
+\[PARA= \frac{p_{ij}}{a_{ij}}\]
 ```
 
 ## Descripción
