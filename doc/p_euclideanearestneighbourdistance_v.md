@@ -10,7 +10,7 @@ float p_euclideanearestneighbourdistance(g1.col_name geometry, g2.col_name geome
 ```
 
 ```tex
-\[\mathrm{ENN= h_{ij}}\]
+\[ENN= h_{ij}\]
 ```
 
 ## Descripción
