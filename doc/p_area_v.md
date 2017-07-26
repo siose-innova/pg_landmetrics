@@ -8,7 +8,7 @@ float p_area(geometry geom);
 ```
 
 ```tex
-\[AREA= {a_{ij}}\left ( \frac{1}{10,000} \right )\]
+\[AREA= a_{ij}\left ( \frac{1}{10,000} \right )\]
 ```
 
 ## Descripción
