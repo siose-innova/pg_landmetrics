@@ -10,7 +10,7 @@ geometry p_corearea(geometry geom, float radius_buffer);
 ```
 
 ```tex
-\[\mathrm{CORE= a_{ij}^{c}\left ( \frac{1}{10,000} \right )}\]
+\[CORE= {a_{ij}^{c}\left ( \frac{1}{10,000} \right )}\]
 ```
 
 ## Descripción
