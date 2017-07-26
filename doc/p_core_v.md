@@ -4,9 +4,9 @@ lm.patch_corearea --  Devuelve el área interior del polígono que está más al
 ## Synopsis
 
 ```sql
-float p_area(geometry geom);
+float p_corearea(geometry geom);
 
-geometry p_core(geometry geom, float radius_buffer);
+geometry p_corearea(geometry geom, float radius_buffer);
 ```
 
 ```tex
