@@ -6,7 +6,7 @@ lm.patch_euclideanearestneighbourdistance --  Devuelve la distancia (m) del pol√
 ```sql
 text p_euclideanearestneighbourdistance(geometry geom);
 
-float St_Distance(g1.col_name geometry, g2.col_name geometry);
+float p_euclideanearestneighbourdistance(g1.col_name geometry, g2.col_name geometry);
 ```
 
 ```tex
