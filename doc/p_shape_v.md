@@ -8,7 +8,7 @@ float p_shape(geometry geom);
 ```
 
 ```tex
-\[\mathrm{SHAPE= \frac{.25 p_{ij}}{\sqrt{a_{ij}}}}\]
+\[SHAPE= \frac{.25 p_{ij}}{\sqrt{a_{ij}}}\]
 ```
 
 ## Descripción
