@@ -1,14 +1,14 @@
 ## Nombre
-lm.escala_nombre metrica --  Descripción del funcionamiento de la métrica. Devuelve...
+lm.landscape_totalarea --  Devuelve el total del área (m²) del paisaje dividido por 10,000 (unidades: Hectáreas).
 
 ## Synopsis
 
 ```sql
-float métrica(geometry geom);
+float l_totalarea(geometry geom);
 ```
 
 ```tex
-fórmula matemática de la métrica
+\[TA= A\left ( \frac{1}{10,000} \right )\]
 ```
 
 ## Descripción
@@ -22,7 +22,7 @@ Descripción más elaborada, con ejemplos de uso en la literatura científica. �
 
 
 ```sql
-SELECT ... FROM table_name;
+SELECT SUM(St_Area(col_name geom))/10000 FROM table_name GROUP BY label;
 ```
 
 ## Referencias
