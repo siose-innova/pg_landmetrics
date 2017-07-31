@@ -1,5 +1,5 @@
 ## Nombre
-lm.landscape_patchrichness --  Devuelve el número de los diferentes categorías de polígonos dentro del límite del paisaje.
+lm.landscape_patchrichness --  Devuelve el número de las diferentes categorías de polígonos presentes dentro del límite del paisaje.
 
 ## Synopsis
 
