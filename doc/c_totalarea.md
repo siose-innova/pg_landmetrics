@@ -22,7 +22,7 @@ Descripción más elaborada, con ejemplos de uso en la literatura científica. �
 
 
 ```sql
-SELECT SUM(St_Area(col_name geometry)/10000 FROM table_name GROUP BY label;
+SELECT SUM(St_Area(col_name geometry))/10000 FROM table_name GROUP BY label;
 ```
 
 ## Referencias
