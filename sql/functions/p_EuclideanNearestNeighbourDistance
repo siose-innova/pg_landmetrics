@@ -1,8 +1,11 @@
 /*
-Patch Euclidean Nearest-Neighbour Distance
-Descripción
-continuación
+Euclidean Nearest-Neighbour Distance
+Descripción: devuelve...
 */
 
+--SAMPLE USAGE:
+/*
+SELECT lm.p_euclideanearestneighbourdistance(geom) As p_euclideanearestneighbourdistance
+FROM (SELECT ST_GeomFromText('POLYGON((0 0, 0 10000, 10000 10000, 10000 0, 0 0))',25830)) As foo(geom);
+*/
 
-SELECT st_area(geom)/10000 FROM case1;

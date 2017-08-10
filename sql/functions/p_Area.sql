@@ -1,7 +1,6 @@
 /*
 Patch Area
-Descripción: es el área del polígono dividido por 10000. Si el resultado es mayor que cero, sin límite.
-Unidades: hectáreas
+Descripción: devuelve la suma del área del polígono dividido por 10,000 (unidades: Hectáreas).
 */
 
 --SAMPLE USAGE:

@@ -1,8 +1,12 @@
 /*
-Landscape Patch Richness
-Descripción
-continuación
+Patch Richness
+Descripción: devuelve...
+*/
+
+--SAMPLE USAGE:
+/*
+SELECT lm.l_patchrichness(geom) As l_patchrichness
+FROM (SELECT ST_GeomFromText('POLYGON((0 0, 0 10000, 10000 10000, 10000 0, 0 0))',25830)) As foo(geom);
 */
 
 
-SELECT st_area(geom)/10000 FROM case1;
