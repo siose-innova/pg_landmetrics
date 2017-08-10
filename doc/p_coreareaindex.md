@@ -24,7 +24,7 @@ Descripción más elaborada, con ejemplos de uso en la literatura científica. �
 
 
 ```sql
-SELECT (St_Area(St_Buffer(col_name geometry, -100))/St_Area(col_name geometry)*100 FROM table_name;
+SELECT (St_Area(St_Buffer(col_name geometry, -100))/St_Area(col_name geometry))*100 FROM table_name;
 ```
 
 ## Referencias
