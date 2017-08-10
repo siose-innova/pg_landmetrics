@@ -22,7 +22,7 @@ Descripción más elaborada, con ejemplos de uso en la literatura científica. �
 
 
 ```sql
-SELECT COUNT(DISTINCT label) FROM table_name GROUP BY label;
+SELECT COUNT(DISTINCT label) FROM table_name;
 ```
 
 ## Referencias
