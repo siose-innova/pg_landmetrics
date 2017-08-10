@@ -1,16 +1,16 @@
 ## Nombre
-lm.landscape_patchdensity --  Devuelve el número de polígonos del paisaje dividido por el área total (m²) del paisaje, multiplicado por 10,000 (unidades: Número por 100 hectáreas).
+lm.landscape_simpsonsdiversityindex --  Devuelve 1 menos la suma, de todas las categorías de los polígonos, a abundancia proporcional de cada tipo de polígono al cuadrado.
 
 ## Synopsis
 
 ```sql
-float l_patchdensity(geometry geom);
+float l_simpsondiversityindex(geometry geom);
 
-integer l_patchdensity(geometry geom);
+power(label)
 ```
 
 ```tex
-\[PD= \frac{N}{A}\left ( 10,000 \right )\left ( 100 \right )\]
+\[SIDI= 1-\sum_{i=1}^{m} P{_{i}}^{2}\]
 ```
 
 ## Descripción
@@ -24,7 +24,10 @@ Descripción más elaborada, con ejemplos de uso en la literatura científica. �
 
 
 ```sql
-SELECT ((SUM(St_NumGeometries(col_name geometry))/SUM(St_Area(col_name geom)))*10000)*100 FROM table_name;
+SELECT POWER(1-SUM(DISTINCT St_Perimeter(col_name geom))*100/
+  (SELECT SUM(St_Perimeter(col_name geom))), 2)
+FROM table_name 
+GROUP BY label;
 ```
 
 ## Referencias
