@@ -22,7 +22,7 @@ Descripción más elaborada, con ejemplos de uso en la literatura científica. �
 
 
 ```sql
-SELECT SUM(St_NumGeometries(col_name geom) FROM table_name GROUP BY label;
+SELECT SUM(St_NumGeometries(col_name geom)) FROM table_name;
 ```
 
 ## Referencias
