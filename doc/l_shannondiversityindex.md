@@ -27,8 +27,7 @@ Descripción más elaborada, con ejemplos de uso en la literatura científica. �
 SELECT -1*SUM(DISTINCT St_Perimeter(col_name geom))*100/
         (SELECT SUM(St_Perimeter(col_name geom)) FROM table_name)*ln(SUM(DISTINCT St_Perimeter(col_name geom))*100/
         (SELECT SUM(St_Perimeter(col_name geom)) FROM table_name)), 
-FROM table_name
-GROUP BY label;
+FROM table_name;
 ```
 
 ## Referencias
