@@ -1,17 +1,52 @@
 # pg_landmetrics
-Una extensión de Postgres/PostGIS para el cálculo de ...
+## Tabla de contenidos
+- [Descripción] (#descripción)
+- [Métricas de paisaje] (#métricas-de-paisaje)
 
-One Paragraph of project description goes here
+
+## Descripción
+
+**pg_landmetrics** es una extensión de Postgres/PostGIS que permite calcular métricas de paisaje de [FRAGSTATS](http://www.umass.edu/landeco/research/fragstats/documents/fragstats.help.4.2.pdf), tanto en vectorial como en ráster. 
 
 
 
+## Métricas de paisaje
 La lista de métricas actualmente disponibles en pg_landmetrics es la siguiente:
 
 | Métrica | Función | Detalles |
 | --- | --- | --- |
-| `AREA` | p_area_v(geom) | [Ver ficha](doc/p_area_v.md) |
-| `CORE AREA` | p_corearea_v | Show file differences that **haven't been** staged |
+| `AREA` | p_area(geom) | [Ver ficha](doc/p_area.md) |
+| `CORE AREA` | p_corearea(geom) | [Ver ficha](doc/p_corearea.md) |
+| `CORE AREA INDEX` | p_coreareaindex(geom) | [Ver ficha](doc/p_coreareaindex.md) |
+| `EUCLIDEAN NEAREST NEIGHBOUR DISTANCE` | p_euclideanearestneighbourdistance(geom) | [Ver ficha](doc/p_euclideanearestneighbourdistance.md) |
+| `NUMBER CORE AREAS` | p_numcoreareas(geom) | [Ver ficha](doc/p_numcoreareas.md) |
+| `PERIMETER` | p_perimeter(geom) | [Ver ficha](doc/p_perimeter.md) |
+| `PERIMETER AREA RATIO` | p_perimarearatio(geom) | [Ver ficha](doc/p_perimarearatio.md) |
+| `SHAPE INDEX` | p_shape(geom) | [Ver ficha](doc/p_shape.md) |
 
+| Métrica | Función | Detalles |
+| --- | --- | --- |
+| `CORE AREA PERCENTAGE LANDSCAPE` | c_coreareapercentlandscape(geom) | [Ver ficha](doc/c_coreareapercentlandscape.md) |
+| `EDGE DENSITY` | c_edgedensity(geom) | [Ver ficha](doc/c_edgedensity.md) |
+| `NUMBER PATCHES` | c_numpatches(geom) | [Ver ficha](doc/c_numpatches.md) |
+| `PATCH DENSITY` | c_patchdensity(geom) | [Ver ficha](doc/c_patchdensity.md) |
+| `PERCENTAGE LANDSCAPE` | c_percentagelandscape(geom) | [Ver ficha](doc/c_percentagelandscape.md) |
+| `TOTAL AREA` | c_totalarea(geom) | [Ver ficha](doc/c_totalarea.md) |
+| `TOTAL CORE AREA` | c_totalcorearea(geom) | [Ver ficha](doc/c_totalcorearea.md) |
+| `TOTAL EDGE` | c_totaledge(geom) | [Ver ficha](doc/c_totaledge.md) |
+
+
+| Métrica | Función | Detalles |
+| --- | --- | --- |
+| `EDGE DENSITY` | l_edgedensity(geom) | [Ver ficha](doc/l_edgedensity.md) |
+| `NUMBER PATCHES` | l_numpatches(geom) | [Ver ficha](doc/l_numpatches.md) |
+| `PATCH DENSITY` | l_patchdensity(geom) | [Ver ficha](doc/l_patchdensity.md) |
+| `PATCH RICHNESS` | l_patchrichness(geom) | [Ver ficha](doc/l_patchrichness.md) |
+| `PATCH RICHNESS DENSITY` | l_patchrichnessdensity(geom) | [Ver ficha](doc/l_patchrichnessdensity.md) |
+| `SHANNON'S DIVERSITY INDEX` | l_shannondiversityindex(geom) | [Ver ficha](doc/l_shannondiversityindex.md) |
+| `SIMPSON'S DIVERSITY INDEX` | l_simpsondiversityindex(geom) | [Ver ficha](doc/l_simpsondiversityindex.md) |
+| `TOTAL AREA` | l_totalarea(geom) | [Ver ficha](doc/l_totalarea.md) |
+| `TOTAL EDGE` | l_totaledge(geom) | [Ver ficha](doc/l_totaledge.md) |
 
 
 
@@ -19,7 +54,7 @@ La lista de métricas actualmente disponibles en pg_landmetrics es la siguiente:
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Prerequisites
+### Prerrequisitos
 
 What things you need to install the software and how to install them
 
