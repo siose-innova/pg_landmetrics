@@ -1,16 +1,16 @@
 # pg_landmetrics
-### Tabla de contenidos
+## Tabla de contenidos
 - [Descripción](#descripcion)
 - [Métricas de paisaje](#metricas-de-paisaje)
 
 
-### Descripción
+## Descripción
 
 **pg_landmetrics** es una extensión de Postgres/PostGIS que permite calcular métricas de paisaje de [FRAGSTATS](http://www.umass.edu/landeco/research/fragstats/documents/fragstats.help.4.2.pdf), tanto en vectorial como en ráster. 
 
 
 
-### Métricas de paisaje
+## Métricas de paisaje
 La lista de métricas actualmente disponibles en pg_landmetrics es la siguiente:
 
 | Métrica | Función | Detalles |
