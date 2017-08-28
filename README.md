@@ -14,6 +14,7 @@
 La lista de métricas actualmente disponibles en pg_landmetrics es la siguiente:
 
 Patch:
+
 | Métrica | Función | Detalles |
 | --- | --- | --- |
 | `AREA` | p_area(geom) | [Ver ficha](doc/p_area.md) |
@@ -26,6 +27,7 @@ Patch:
 | `SHAPE INDEX` | p_shape(geom) | [Ver ficha](doc/p_shape.md) |
 
 Class:
+
 | Métrica | Función | Detalles |
 | --- | --- | --- |
 | `CORE AREA PERCENTAGE LANDSCAPE` | c_coreareapercentlandscape(geom) | [Ver ficha](doc/c_coreareapercentlandscape.md) |
@@ -38,6 +40,7 @@ Class:
 | `TOTAL EDGE` | c_totaledge(geom) | [Ver ficha](doc/c_totaledge.md) |
 
 Landscape:
+
 | Métrica | Función | Detalles |
 | --- | --- | --- |
 | `EDGE DENSITY` | l_edgedensity(geom) | [Ver ficha](doc/l_edgedensity.md) |
