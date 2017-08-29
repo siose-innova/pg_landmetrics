@@ -117,12 +117,12 @@ Add additional notes about how to deploy this on a live system
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
-### Contribución
+## Contribución
 
 Para ver detalles sobre el código de conducta y el proceso de envío de solicitudes para la contribución al proyecto, por favor lea el archivo [CONTRIBUTING.md](CONTRIBUTING.md)
 
 
-### Licencia
+## Licencia
 
 Este proyecto está bajo licencia - ver archivo [LICENSE](LICENSE) para más detalles.
 
