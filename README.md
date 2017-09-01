@@ -9,7 +9,7 @@
 
 
 ## Descripción
-`pg_landmetrics` es una extensión de Postgres/PostGIS que permite calcular métricas de paisaje de [FRAGSTATS](http://www.umass.edu/landeco/research/fragstats/documents/fragstats.help.4.2.pdf), tanto en vectorial como en ráster.
+`pg_landmetrics` es una extensión de Postgres/PostGIS que permite calcular métricas de paisaje de [FRAGSTATS](http://www.umass.edu/landeco/research/fragstats/documents/fragstats.help.4.2.pdf)(McGarigal, 2015), tanto para datos vectoriales como ráster.
 
 Esta extensión está relacionada con un proyecto de investigación llamado [**SIOSE-INNOVA**](http://siose-innova.es/project/). Este proyecto tiene dos objetivos principales:
 * Innovación técnica para la comprobación de tecnologías NoSQL que aporten mejores soluciones en la base de datos
@@ -19,7 +19,7 @@ Esta extensión está relacionada con un proyecto de investigación llamado [**S
 ## Métricas de paisaje
 La lista de métricas actualmente disponibles en `pg_landmetrics` es la siguiente:
 
-Patch:
+**PATCH** - se calcula para cada polígono del paisaje:
 
 | Métrica | Función | Detalles |
 | --- | --- | --- |
@@ -32,7 +32,7 @@ Patch:
 | `PERIMETER AREA RATIO` | p_perimarearatio(geom) | [Ver ficha](doc/p_perimarearatio.md) |
 | `SHAPE INDEX` | p_shape(geom) | [Ver ficha](doc/p_shape.md) |
 
-Class:
+**CLASS** - se calcula para cada tipo o categoría de polígono del paisaje:
 
 | Métrica | Función | Detalles |
 | --- | --- | --- |
@@ -45,7 +45,7 @@ Class:
 | `TOTAL CORE AREA` | c_totalcorearea(geom) | [Ver ficha](doc/c_totalcorearea.md) |
 | `TOTAL EDGE` | c_totaledge(geom) | [Ver ficha](doc/c_totaledge.md) |
 
-Landscape:
+**LANDSCAPE** - se calcula para todo el mosaico de poligonos del paisaje:
 
 | Métrica | Función | Detalles |
 | --- | --- | --- |
@@ -95,31 +95,6 @@ End with an example of getting some data out of the system or using it for a lit
 
 Explain how to run the automated tests for this system
 
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### Deployment
-
-Add additional notes about how to deploy this on a live system
-
-### Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
 ## Contribución
 
