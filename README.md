@@ -9,7 +9,7 @@
 
 
 ## Descripción
-`pg_landmetrics` es una extensión de Postgres/PostGIS que permite calcular métricas de paisaje de [FRAGSTATS](http://www.umass.edu/landeco/research/fragstats/documents/fragstats.help.4.2.pdf)(McGarigal, 2015), tanto para datos vectoriales como ráster.
+`pg_landmetrics` es una extensión de Postgres/PostGIS que permite calcular métricas de paisaje de [FRAGSTATS](http://www.umass.edu/landeco/research/fragstats/documents/fragstats.help.4.2.pdf) (McGarigal, 2015), tanto para datos vectoriales como ráster.
 
 Esta extensión está relacionada con un proyecto de investigación llamado [**SIOSE-INNOVA**](http://siose-innova.es/project/). Este proyecto tiene dos objetivos principales:
 * Innovación técnica para la comprobación de tecnologías NoSQL que aporten mejores soluciones en la base de datos
