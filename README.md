@@ -19,7 +19,7 @@ Esta extensión está relacionada con un proyecto de investigación llamado [**S
 ## Métricas de paisaje
 La lista de métricas actualmente disponibles en `pg_landmetrics` es la siguiente:
 
-**PATCH** - se calcula para cada polígono del paisaje:
+- **PATCH** - se calcula para cada polígono del paisaje:
 
 | Métrica | Función | Detalles |
 | --- | --- | --- |
@@ -32,7 +32,7 @@ La lista de métricas actualmente disponibles en `pg_landmetrics` es la siguient
 | `PERIMETER AREA RATIO` | p_perimarearatio(geom) | [Ver ficha](doc/p_perimarearatio.md) |
 | `SHAPE INDEX` | p_shape(geom) | [Ver ficha](doc/p_shape.md) |
 
-**CLASS** - se calcula para cada tipo o categoría de polígono del paisaje:
+- **CLASS** - se calcula para cada tipo o categoría de polígono del paisaje:
 
 | Métrica | Función | Detalles |
 | --- | --- | --- |
@@ -45,7 +45,7 @@ La lista de métricas actualmente disponibles en `pg_landmetrics` es la siguient
 | `TOTAL CORE AREA` | c_totalcorearea(geom) | [Ver ficha](doc/c_totalcorearea.md) |
 | `TOTAL EDGE` | c_totaledge(geom) | [Ver ficha](doc/c_totaledge.md) |
 
-**LANDSCAPE** - se calcula para todo el mosaico de poligonos del paisaje:
+- **LANDSCAPE** - se calcula para todo el mosaico de poligonos del paisaje:
 
 | Métrica | Función | Detalles |
 | --- | --- | --- |
