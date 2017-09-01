@@ -70,7 +70,7 @@ Para obtener una copia de este proyecto y tenerlo en funcionamiento en la máqui
 #### Prerrequisitos
 - PostgreSQL 9.5+
 - PostGIS extension
-- Git
+- [Git](https://git-scm.com/)
 
 #### Instalación
 
