@@ -1,5 +1,6 @@
 # pg_landmetrics
 ![header example - proyecto SIOSE-INNOVA](https://github.com/andrearosado/pg_landmetrics/blob/master/header.png)
+
 ## Tabla de contenidos
 - [Descripción](#descripcion)
 - [Métricas de paisaje](#metricas-de-paisaje)
@@ -8,13 +9,15 @@
 
 
 ## Descripción
+`pg_landmetrics` es una extensión de Postgres/PostGIS que permite calcular métricas de paisaje de [FRAGSTATS](http://www.umass.edu/landeco/research/fragstats/documents/fragstats.help.4.2.pdf), tanto en vectorial como en ráster.
 
-**pg_landmetrics** es una extensión de Postgres/PostGIS que permite calcular métricas de paisaje de [FRAGSTATS](http://www.umass.edu/landeco/research/fragstats/documents/fragstats.help.4.2.pdf), tanto en vectorial como en ráster. 
-
+Esta extensión está relacionada con un proyecto de investigación llamado [**SIOSE-INNOVA**](http://siose-innova.es/project/). Este proyecto tiene dos objetivos principales:
+* Innovación técnica para la comprobación de tecnologías NoSQL que aporten mejores soluciones en la base de datos
+* Aplicación de estas nuevas tecnologías en casos de estudios reales
 
 
 ## Métricas de paisaje
-La lista de métricas actualmente disponibles en pg_landmetrics es la siguiente:
+La lista de métricas actualmente disponibles en `pg_landmetrics` es la siguiente:
 
 Patch:
 
