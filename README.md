@@ -49,7 +49,7 @@ La lista de métricas actualmente disponibles en `pg_landmetrics` es la siguient
 | `TOTAL CORE AREA` | c_totalcorearea(geom) | [Ver ficha](doc/c_totalcorearea.md) |
 | `TOTAL EDGE` | c_totaledge(geom) | [Ver ficha](doc/c_totaledge.md) |
 
-- **LANDSCAPE** - se calcula para todo el mosaico de poligonos del paisaje:
+- **LANDSCAPE** - se calcula para todo el mosaico de polígonos del paisaje:
 
 | Métrica | Función | Detalles |
 | --- | --- | --- |
