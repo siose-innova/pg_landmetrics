@@ -67,16 +67,16 @@ La lista de métricas actualmente disponibles en `pg_landmetrics` es la siguient
 ## Para empezar
 Para obtener una copia de este proyecto y tenerlo en funcionamiento en la máquina local, va a ser necesario realizar los siguientes pasos: 
 
-### Prerrequisitos
+#### Prerrequisitos
 - PostgreSQL 9.5+
 - PostGIS extension
 - Git
 
-### Instalación
+#### Instalación
 
 
 
-### A prueba
+## A prueba
 Para probar alguna de las métricas realizadas en `pg_landmetrics`, solamente será necesario copiar la consulta SQL o función en el interfaz de PgAdmin. 
 
 ## Contribución
