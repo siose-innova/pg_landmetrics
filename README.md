@@ -4,6 +4,10 @@
 ## Tabla de contenidos
 - [Descripción](#descripcion)
 - [Métricas de paisaje](#metricas-de-paisaje)
+- [Para empezar](#para-empezar)
+  - [Prerrequisitos](#prerrequisitos)
+  - [Instalación](#instalacion)
+- [A prueba](#a-prueba)
 - [Contribución](#contribución)
 - [Licencia](#licencia)
 
@@ -60,48 +64,24 @@ La lista de métricas actualmente disponibles en `pg_landmetrics` es la siguient
 | `TOTAL EDGE` | l_totaledge(geom) | [Ver ficha](doc/l_totaledge.md) |
 
 
-
-### Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+## Para empezar
+Para obtener una copia de este proyecto y tenerlo en funcionamiento en la máquina local, va a ser necesario realizar los siguientes pasos: 
 
 ### Prerrequisitos
+- PostgreSQL 9.5+
+- PostGIS extension
+- Git
 
-What things you need to install the software and how to install them
+### Instalación
 
-```
-Give examples
-```
 
-### Installing
 
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-### Running the tests
-
-Explain how to run the automated tests for this system
-
+### A prueba
+Para probar alguna de las métricas realizadas en `pg_landmetrics`, solamente será necesario copiar la consulta SQL o función en el interfaz de PgAdmin. 
 
 ## Contribución
-
 Para ver detalles sobre el código de conducta y el proceso de envío de solicitudes para la contribución al proyecto, por favor lea el archivo [CONTRIBUTING.md](CONTRIBUTING.md)
 
-
 ## Licencia
-
 Este proyecto está bajo licencia - ver archivo [LICENSE](LICENSE) para más detalles.
 
