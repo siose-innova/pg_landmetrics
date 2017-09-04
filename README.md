@@ -67,7 +67,7 @@ La lista de métricas actualmente disponibles en `pg_landmetrics` es la siguient
 Para obtener un clon del proyecto y tenerlo en funcionamiento en la máquina local, va a ser necesario: 
 
 #### Prerrequisitos e instalación
-- [Docker compose](https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-16-04) (cómo instalar desde terminal)
+- [Docker compose](https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-16-04)
   - [PostgreSQL](https://hub.docker.com/_/postgres/)
   - [PostGIS extension](https://hub.docker.com/r/mdillon/postgis/)
 - [Git](https://git-scm.com/)
@@ -76,7 +76,7 @@ Para obtener un clon del proyecto y tenerlo en funcionamiento en la máquina loc
 Para probar alguna de las métricas realizadas en `pg_landmetrics`, solamente será necesario copiar la consulta SQL o función en el interfaz de PgAdmin. 
 
 ## Contribución
-Para ver detalles sobre el código de conducta y el proceso de envío de solicitudes para la contribución al proyecto, por favor lea el archivo [CONTRIBUTING.md](CONTRIBUTING.md)
+Para ver detalles sobre el código de conducta y el proceso de envío de solicitudes para la contribución al proyecto, por favor lea el archivo [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Licencia
 Este proyecto está bajo licencia - ver archivo [LICENSE](LICENSE) para más detalles.
