@@ -1,5 +1,5 @@
 ## Nombre
-lm.patch_euclideanearestneighbourdistance --  Devuelve la distancia (m) del polígono vecino más próximo de la misma categoría, basado en la distancia ms corta de borde a borde (unidades: Metros).
+lm.patch_euclideanearestneighbourdistance --  Devuelve la distancia (m) del polígono vecino más próximo de la misma categoría, basado en la distancia más corta de borde a borde (unidades: Metros).
 
 ## Synopsis
 
