@@ -3,7 +3,7 @@
 
 ## Tabla de contenidos
 - [Descripción](#descripcion)
-- [Métricas de paisaje](#metricas-de-paisaje)
+- [Métricas disponibles](#metricas-disponibles)
 - [Para empezar](#para-empezar)
   - [Prerrequisitos e instalación](#prerrequisitos-e-instalacion)
 - [A prueba](#a-prueba)
@@ -19,10 +19,9 @@ Esta extensión está relacionada con un proyecto de investigación llamado [**S
 * Aplicación de estas nuevas tecnologías en casos de estudios reales
 
 
-## Métricas de paisaje
-La lista de métricas actualmente disponibles en `pg_landmetrics` es la siguiente:
+## Métricas disponibles
 
-- **PATCH** (p) - se calcula para cada polígono del paisaje:
+#### PATCH (p) - se calcula para cada polígono del paisaje:
 
 | Métrica | Función | Detalles |
 | --- | --- | --- |
@@ -35,7 +34,7 @@ La lista de métricas actualmente disponibles en `pg_landmetrics` es la siguient
 | `PERIMETER AREA RATIO` | p_perimarearatio(geom) | [Ver ficha](doc/p_perimarearatio.md) |
 | `SHAPE INDEX` | p_shape(geom) | [Ver ficha](doc/p_shape.md) |
 
-- **CLASS** (c) - se calcula para cada tipo o categoría de polígono del paisaje:
+#### CLASS (c) - se calcula para cada tipo o categoría de polígono del paisaje:
 
 | Métrica | Función | Detalles |
 | --- | --- | --- |
@@ -48,7 +47,7 @@ La lista de métricas actualmente disponibles en `pg_landmetrics` es la siguient
 | `TOTAL CORE AREA` | c_totalcorearea(geom) | [Ver ficha](doc/c_totalcorearea.md) |
 | `TOTAL EDGE` | c_totaledge(geom) | [Ver ficha](doc/c_totaledge.md) |
 
-- **LANDSCAPE** (l) - se calcula para todo el mosaico de polígonos del paisaje:
+#### LANDSCAPE (l) - se calcula para todo el mosaico de polígonos del paisaje:
 
 | Métrica | Función | Detalles |
 | --- | --- | --- |
