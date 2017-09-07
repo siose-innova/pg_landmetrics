@@ -1,12 +1,13 @@
 /*
-Shannon's Diversity Index
-Descripción: devuelve menos la suma, de todas las categorías de los polígonos, la abundancia proporcional de cada tipo de polígono multiplicado por esa proporción.
+Shannon's Diversity Index - devuelve menos la suma, de todas las categorías de los polígonos, la abundancia proporcional de cada tipo de polígono multiplicado por esa proporción.
 */
 
 --SAMPLE USAGE:
 /*
-SELECT lm.l_shannondiversityindex(geom) As l_shannondiversityindex
-FROM (SELECT ST_GeomFromText('POLYGON((0 0, 0 10000, 10000 10000, 10000 0, 0 0))',25830)) As foo(geom);
+WITH  patches (geom,categ) AS (VALUES
+                               (ST_GeomFromText('POLYGON((0 0,0 1,1 1,1 0,0 0))',25830),'Urbano'))
+
+SELECT lm.l_shannondiversityindex(geom) As l_shannondiversityindex FROM patches;
 */
 
 

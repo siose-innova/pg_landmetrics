@@ -1,12 +1,13 @@
 /*
-Core Area Index
-Descripción: devuelve el área del núcleo del polígono (m²) dividido por el área total del polígono (m²), multiplicado por 100 (unidades: Porcentaje).
+Core Area Index - devuelve el área del núcleo del polígono (m²) dividido por el área total del polígono (m²), multiplicado por 100 (unidades: Porcentaje).
 */
 
 --SAMPLE USAGE:
 /*
-SELECT lm.p_coreareaindex(geom) As p_coreareaindex
-FROM (SELECT ST_GeomFromText('POLYGON((0 0, 0 10000, 10000 10000, 10000 0, 0 0))',25830)) As foo(geom);
+WITH  patches (geom,categ) AS (VALUES
+                               (ST_GeomFromText('POLYGON((0 0,0 1,1 1,1 0,0 0))',25830),'Urbano'))
+
+SELECT lm.p_coreareaindex(geom) As p_coreareaindex FROM patches;
 */
 
 

@@ -1,12 +1,13 @@
 /*
-Total Area
-Descripción: devuelve el total del área (m²) del paisaje dividido por 10,000 (unidades: Hectáreas).
+Total Area - devuelve el total del área (m²) del paisaje dividido por 10,000 (unidades: Hectáreas).
 */
 
 --SAMPLE USAGE:
 /*
-SELECT lm.l_totalarea(geom) As l_totalarea
-FROM (SELECT ST_GeomFromText('POLYGON((0 0, 0 10000, 10000 10000, 10000 0, 0 0))',25830)) As foo(geom);
+WITH  patches (geom,categ) AS (VALUES
+                               (ST_GeomFromText('POLYGON((0 0,0 1,1 1,1 0,0 0))',25830),'Urbano'))
+
+SELECT lm.l_totalarea(geom) As l_totalarea FROM patches;
 */
 
 

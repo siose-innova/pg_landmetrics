@@ -1,12 +1,13 @@
 /*
-Number of Core Areas
-Descripción: devuelve el número de núcleos de las áreas disyuntivas que contiene el límite de un polígono.
+Number of Core Areas - devuelve el número de núcleos de las áreas disyuntivas que contiene el límite de un polígono.
 */
 
 --SAMPLE USAGE:
 /*
-SELECT lm.p_numcoreareas(geom) As p_numcoreareas
-FROM (SELECT ST_GeomFromText('POLYGON((0 0, 0 10000, 10000 10000, 10000 0, 0 0))',25830)) As foo(geom);
+WITH  patches (geom,categ) AS (VALUES
+                               (ST_GeomFromText('POLYGON((0 0,0 1,1 1,1 0,0 0))',25830),'Urbano'))
+
+SELECT lm.p_numcoreareas(geom) As p_numcoreareas FROM patches;
 */
 
 

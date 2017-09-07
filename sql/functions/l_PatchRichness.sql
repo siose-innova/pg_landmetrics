@@ -1,23 +1,24 @@
 /*
-Patch Richness
-Descripción: devuelve el número de las diferentes categorías de polígonos presentes dentro del límite del paisaje.
+Patch Richness - devuelve el número de las diferentes categorías de polígonos presentes dentro del límite del paisaje.
 */
 
 --SAMPLE USAGE:
 /*
-SELECT lm.l_patchrichness(geom) As l_patchrichness
-FROM (SELECT ST_GeomFromText('POLYGON((0 0, 0 10000, 10000 10000, 10000 0, 0 0))',25830)) As foo(geom);
+WITH  patches (geom,categ) AS (VALUES
+                               (ST_GeomFromText('POLYGON((0 0,0 1,1 1,1 0,0 0))',25830),'Urbano'))
+
+SELECT lm.l_patchrichness(geom, categ) As l_patchrichness, categ FROM patches;
 */
 
-CREATE OR REPLACE FUNCTION lm.l_patchrichness(geom geometry, category_level text)
+CREATE OR REPLACE FUNCTION lm.l_patchrichness(geom geometry, categ text)
 RETURNS bigint AS 
 $$
 
-SELECT COUNT(DISTINCT category_level);
+SELECT COUNT(DISTINCT categ);
 
 $$
 LANGUAGE SQL
 IMMUTABLE
 RETURNS NULL ON NULL INPUT;
 
-COMMENT ON FUNCTION lm.l_patchrichness(geom geometry, category_level text) IS 'Número total de las distintas categorías del paisaje';
+COMMENT ON FUNCTION lm.l_patchrichness(geom geometry, categ text) IS 'Número total de las distintas categorías del paisaje';

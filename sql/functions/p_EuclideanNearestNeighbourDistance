@@ -1,22 +1,21 @@
 /*
-Euclidean Nearest-Neighbour Distance
-Descripción: devuelve la distancia (m) del polígono vecino más próximo de la misma categoría, basado en la distancia más corta de borde a borde (unidades: Metros).
+Euclidean Nearest-Neighbour Distance - devuelve la distancia (m) del polígono vecino más próximo de la misma categoría, basado en la distancia más corta de borde a borde (unidades: Metros).
 */
 
 --SAMPLE USAGE:
 /*
-SELECT lm.p_euclideanearestneighbourdistance(geom) As p_euclideanearestneighbourdistance
-FROM (SELECT ST_GeomFromText('POLYGON((0 0, 0 10000, 10000 10000, 10000 0, 0 0))',25830)) As foo(geom);
+WITH  patches (geom,categ) AS (VALUES
+                               (ST_GeomFromText('POLYGON((0 0,0 1,1 1,1 0,0 0))',25830),'Urbano'))
+
+SELECT lm.p_euclideanearestneighbourdistance(geom) As p_euclideanearestneighbourdistance FROM patches;
 */
 
 
-CREATE OR REPLACE FUNCTION lm.p_euclideanearestneighbourdistance(geom geometry, category_level text, id integer)
+CREATE OR REPLACE FUNCTION lm.p_euclideanearestneighbourdistance(geom geometry)
 RETURNS double precision AS 
 $$
 
-SELECT St_Distance(g1.geom,g2.geom)
-WHERE g1.id = 1 AND g1.id <> g2.id AND g2.category_level
-ORDER BY St_Distance(g1.geom,g2.geom);
+SELECT
 
 $$
 LANGUAGE SQL

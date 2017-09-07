@@ -1,12 +1,13 @@
 /*
-Patch Perimeter
-Descripción: devuelve el perímetro del polígono, incluyendo algún vacío interno (unidades: Metros).
+Patch Perimeter - devuelve el perímetro del polígono, incluyendo algún vacío interno (unidades: Metros).
 */
 
 --SAMPLE USAGE:
 /*
-SELECT lm.p_perimeter(geom) As p_perimeter
-FROM (SELECT ST_GeomFromText('POLYGON((0 0, 0 10000, 10000 10000, 10000 0, 0 0))',25830)) As foo(geom);
+WITH  patches (geom,categ) AS (VALUES
+                               (ST_GeomFromText('POLYGON((0 0,0 1,1 1,1 0,0 0))',25830),'Urbano'))
+
+SELECT lm.p_perimeter(geom) As p_perimeter FROM patches;
 */
 
 

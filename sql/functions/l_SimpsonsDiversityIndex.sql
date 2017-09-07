@@ -1,12 +1,13 @@
 /*
-Simpson's Diversity Index
-Descripción: devuelve 1 menos la suma, de todas las categorías de los polígonos, a abundancia proporcional de cada tipo de polígono al cuadrado.
+Simpson's Diversity Index - devuelve 1 menos la suma, de todas las categorías de los polígonos, a abundancia proporcional de cada tipo de polígono al cuadrado.
 */
 
 --SAMPLE USAGE:
 /*
-SELECT lm.l_simpsondiversityindex(geom) As l_simpsondiversityindex
-FROM (SELECT ST_GeomFromText('POLYGON((0 0, 0 10000, 10000 10000, 10000 0, 0 0))',25830)) As foo(geom);
+WITH  patches (geom,categ) AS (VALUES
+                               (ST_GeomFromText('POLYGON((0 0,0 1,1 1,1 0,0 0))',25830),'Urbano'))
+
+SELECT lm.l_simpsondiversityindex(geom) As l_simpsondiversityindex FROM patches;
 */
 
 

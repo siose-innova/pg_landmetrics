@@ -1,12 +1,13 @@
 /*
-Number of Patches
-Descripción: devuelve el número de polígonos del paisaje.
+Number of Patches - devuelve el número de polígonos del paisaje.
 */
 
 --SAMPLE USAGE:
 /*
-SELECT lm.l_numpatches(geom) As l_numpatches
-FROM (SELECT ST_GeomFromText('POLYGON((0 0, 0 10000, 10000 10000, 10000 0, 0 0))',25830)) As foo(geom);
+WITH  patches (geom,categ) AS (VALUES
+                               (ST_GeomFromText('POLYGON((0 0,0 1,1 1,1 0,0 0))',25830),'Urbano'))
+
+SELECT lm.l_numpatches(geom) As l_numpatches FROM patches;
 */
 
 
