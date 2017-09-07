@@ -22,7 +22,10 @@ Descripción más elaborada, con ejemplos de uso en la literatura científica. �
 
 
 ```sql
-SELECT COUNT(DISTINCT label) FROM table_name;
+WITH  patches (geom,categ) AS (VALUES
+                               (ST_GeomFromText('POLYGON((0 0,0 1,1 1,1 0,0 0))',25830),'Urbano'))
+
+SELECT lm.l_patchrichness(geom, categ) As l_patchrichness, categ FROM patches;
 ```
 
 ## Referencias

@@ -21,7 +21,10 @@ Descripción más elaborada, con ejemplos de uso en la literatura científica. �
 ## Ejemplos (autocontenidos)
 
 ```sql
-SELECT (St_Perimeter(col_name geometry)/St_Area(col_name geometry)) FROM table_name;
+WITH  patches (geom,categ) AS (VALUES
+                               (ST_GeomFromText('POLYGON((0 0,0 1,1 1,1 0,0 0))',25830),'Urbano'))
+
+SELECT lm.p_perimarearatio(geom) As p_perimarearatio FROM patches;
 ```
 
 ## Referencias

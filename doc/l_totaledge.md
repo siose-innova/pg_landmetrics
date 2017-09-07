@@ -22,7 +22,10 @@ Descripción más elaborada, con ejemplos de uso en la literatura científica. �
 
 
 ```sql
-SELECT SUM(St_Perimeter(col_name geom))/10000 FROM table_name;
+WITH  patches (geom,categ) AS (VALUES
+                               (ST_GeomFromText('POLYGON((0 0,0 1,1 1,1 0,0 0))',25830),'Urbano'))
+
+SELECT lm.l_totaledge(geom) As l_totaledge FROM patches;
 ```
 
 ## Referencias

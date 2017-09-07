@@ -21,7 +21,10 @@ Descripción más elaborada, con ejemplos de uso en la literatura científica. �
 
 
 ```sql
-SELECT SUM(St_Perimeter(col_name geometry)) FROM table_name GROUP BY label;
+WITH  patches (geom,categ) AS (VALUES
+                               (ST_GeomFromText('POLYGON((0 0,0 1,1 1,1 0,0 0))',25830),'Urbano'))
+
+SELECT lm.c_totaledge(geom, categ) As c_totaledge, categ FROM patches;
 ```
 
 ## Referencias

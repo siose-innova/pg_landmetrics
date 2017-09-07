@@ -24,7 +24,10 @@ Descripción más elaborada, con ejemplos de uso en la literatura científica. �
 
 
 ```sql
-SELECT ((COUNT(DISTINCT label)/SUM(St_Area(col_name geom)))*10000)*100 FROM table_name;
+WITH  patches (geom,categ) AS (VALUES
+                               (ST_GeomFromText('POLYGON((0 0,0 1,1 1,1 0,0 0))',25830),'Urbano'))
+
+SELECT lm.l_patchrichnessdensity(geom, categ) As l_patchrichnessdensity, categ FROM patches;
 ```
 
 ## Referencias

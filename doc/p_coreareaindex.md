@@ -24,7 +24,10 @@ Descripción más elaborada, con ejemplos de uso en la literatura científica. �
 
 
 ```sql
-SELECT (St_Area(St_Buffer(col_name geometry, -100))/St_Area(col_name geometry))*100 FROM table_name;
+WITH  patches (geom,categ) AS (VALUES
+                               (ST_GeomFromText('POLYGON((0 0,0 1,1 1,1 0,0 0))',25830),'Urbano'))
+
+SELECT lm.p_coreareaindex(geom) As p_coreareaindex FROM patches;
 ```
 
 ## Referencias
