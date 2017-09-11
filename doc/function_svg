@@ -1,0 +1,39 @@
+WITH sp AS (SELECT * FROM lm.sample_patches),
+degrees AS (SELECT st_transform(geom,4326) AS geom, svg_color FROM sp),
+paths (svg) AS (
+    SELECT array_to_string(array_agg(concat('<path d= "', ST_AsSVG(geom,0), '" ', ' stroke="black" stroke-width="2" fill="', svg_color, '" />')),'')
+    FROM degrees
+),
+env AS(
+    SELECT st_extent(geom) AS extent
+    FROM degrees
+),
+dims AS (
+    SELECT st_ymin(extent) AS bottom, st_ymax(extent) AS top, st_xmin(extent) AS lefthand, st_xmax(extent) AS righthand
+    FROM env
+)
+SELECT concat(
+    '<svg width="100%',
+    ' viewBox="',
+    dims.top, ' ',
+    dims.lefthand, ' ',
+    dims.righthand, ' ',
+    dims.bottom, ' ',
+    '">',
+    paths.svg,
+	'</svg>')
+FROM dims, paths;
+
+/*
+<svg>
+<path d= "----" stroke="red" stroke-width="3" fill="none" />
+<path d= "----" stroke="red" stroke-width="3" fill="none" />
+
+<path d= "----" stroke="red" stroke-width="3" fill="none" />
+
+<path d= "----" stroke="red" stroke-width="3" fill="none" />
+
+</svg>*/
+
+WITH exclamacion(valor) AS (SELECT '!!')
+SELECT concat('Hola', 'Mundo', valor) FROM exclamacion
