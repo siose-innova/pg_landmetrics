@@ -32,7 +32,7 @@ Esta extensión está relacionada con un proyecto de investigación llamado [**S
 | `NUMBER CORE AREAS` | p_numcoreareas(geom) | [Ver ficha](doc/p_numcoreareas.md) |
 | `PERIMETER` | p_perimeter(geom) | [Ver ficha](doc/p_perimeter.md) |
 | `PERIMETER AREA RATIO` | p_perimarearatio(geom) | [Ver ficha](doc/p_perimarearatio.md) |
-| `SHAPE INDEX` | p_shapeindex(geom) | [Ver ficha](doc/p_shape.md) |
+| `SHAPE INDEX` | p_shapeindex(geom) | [Ver ficha](doc/p_shapeindex.md) |
 
 #### CLASS (c) - se calcula para cada tipo o categoría de polígono del paisaje:
 
