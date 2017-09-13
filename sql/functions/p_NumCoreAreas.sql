@@ -4,18 +4,15 @@ Number of Core Areas - devuelve el número de núcleos de las áreas disyuntivas
 
 --SAMPLE USAGE:
 /*
-WITH  patches (geom,categ) AS (VALUES
-                               (ST_GeomFromText('POLYGON((0 0,0 1,1 1,1 0,0 0))',25830),'Urbano'))
-
-SELECT lm.p_numcoreareas(geom) As p_numcoreareas FROM patches;
+SELECT lm.p_numcoreareas(geom) As p_numcoreareas FROM lm.sample_patches;
 */
 
 
 CREATE OR REPLACE FUNCTION lm.p_numcoreareas(geom geometry)
-RETURNS integer AS 
+RETURNS lm.metric AS 
 $$
 
-SELECT St_NumGeometries(St_Buffer(geom, -100));
+SELECT ('Number of Core Areas'::text, St_NumGeometries(St_Buffer(geom, -100)),'')::lm.metric;
 
 $$
 LANGUAGE SQL

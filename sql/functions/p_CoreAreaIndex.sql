@@ -4,18 +4,15 @@ Core Area Index - devuelve el área del núcleo del polígono (m²) dividido por
 
 --SAMPLE USAGE:
 /*
-WITH  patches (geom,categ) AS (VALUES
-                               (ST_GeomFromText('POLYGON((0 0,0 1,1 1,1 0,0 0))',25830),'Urbano'))
-
-SELECT lm.p_coreareaindex(geom) As p_coreareaindex FROM patches;
+SELECT lm.p_coreareaindex(geom) As p_coreareaindex FROM lm.sample_patches;
 */
 
 
 CREATE OR REPLACE FUNCTION lm.p_coreareaindex(geom geometry)
-RETURNS double precision AS 
+RETURNS lm.metric AS 
 $$
 
-SELECT (St_Area(St_Buffer(geom, -100))/St_Area(geom))*100;
+SELECT ('Core Area Index'::text, (St_Area(St_Buffer(geom, -100))/St_Area(geom))*100, '%'::text)::lm.metric;
 
 $$
 LANGUAGE SQL

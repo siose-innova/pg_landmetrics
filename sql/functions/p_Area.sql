@@ -4,17 +4,14 @@ Patch Area - devuelve la suma del área del polígono dividido por 10,000 (unida
 
 --SAMPLE USAGE:
 /*
-WITH  patches (geom,categ) AS (VALUES
-                               (ST_GeomFromText('POLYGON((0 0,0 1,1 1,1 0,0 0))',25830),'Urbano'))
-
-SELECT lm.p_area(geom) As p_area FROM patches;
+SELECT lm.p_area(geom) As p_area FROM lm.sample_patches;
 */
 
 CREATE OR REPLACE FUNCTION lm.p_area(geom geometry)
-RETURNS double precision AS 
+RETURNS lm.metric AS 
 $$
 
-SELECT St_Area(geom)/10000;
+SELECT ('Patch Area'::text, St_Area(geom)/10000, 'Ha.'::text)::lm.metric;
 
 $$
 LANGUAGE SQL

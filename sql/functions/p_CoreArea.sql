@@ -4,18 +4,15 @@ Core Area - devuelve el área interior del polígono que está más allá de la 
 
 --SAMPLE USAGE:
 /*
-WITH  patches (geom,categ) AS (VALUES
-                               (ST_GeomFromText('POLYGON((0 0,0 1,1 1,1 0,0 0))',25830),'Urbano'))
-
-SELECT lm.p_corearea(geom) As p_corearea FROM patches;
+SELECT lm.p_corearea(geom) As p_corearea FROM lm.sample_patches;
 */
 
 
 CREATE OR REPLACE FUNCTION lm.p_corearea(geom geometry)
-RETURNS double precision AS 
+RETURNS lm.metric AS 
 $$
 
-SELECT St_Area(St_Buffer(geom, -100))/10000;
+SELECT ('Core Area'::text, St_Area(St_Buffer(geom, -100))/10000, 'Ha.'::text)::lm.metric;
 
 $$
 LANGUAGE SQL

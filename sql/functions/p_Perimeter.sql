@@ -4,18 +4,15 @@ Patch Perimeter - devuelve el perímetro del polígono, incluyendo algún vacío
 
 --SAMPLE USAGE:
 /*
-WITH  patches (geom,categ) AS (VALUES
-                               (ST_GeomFromText('POLYGON((0 0,0 1,1 1,1 0,0 0))',25830),'Urbano'))
-
-SELECT lm.p_perimeter(geom) As p_perimeter FROM patches;
+SELECT lm.p_perimeter(geom) As p_perimeter FROM lm.sample_patches;
 */
 
 
 CREATE OR REPLACE FUNCTION lm.p_perimeter(geom geometry)
-RETURNS double precision AS 
+RETURNS lm.metric AS 
 $$
 
-SELECT St_Perimeter(geom);
+SELECT ('Patch Perimeter'::text, St_Perimeter(geom),'Metros'::text)::lm.metric;
 
 $$
 LANGUAGE SQL

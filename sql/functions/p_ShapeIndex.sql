@@ -4,18 +4,15 @@ Shape Index - devuelve el perímetro (m) del polígono dividido por la raíz cua
 
 --SAMPLE USAGE:
 /*
-WITH  patches (geom,categ) AS (VALUES
-                               (ST_GeomFromText('POLYGON((0 0,0 1,1 1,1 0,0 0))',25830),'Urbano'))
-
-SELECT lm.p_shapeindex(geom) As p_shape FROM patches;
+SELECT lm.p_shapeindex(geom) As p_shape FROM lm.sample_patches;
 */
 
 
 CREATE OR REPLACE FUNCTION lm.p_shapeindex(geom geometry)
-RETURNS double precision AS 
+RETURNS lm.metric AS 
 $$
 
-SELECT St_Perimeter(geom)/(|/St_Area(geom));
+SELECT ('Shape Index'::text, St_Perimeter(geom)/sqrt(St_Area(geom)),'')::lm.metric;
 
 $$
 LANGUAGE SQL
