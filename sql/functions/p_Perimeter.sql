@@ -12,7 +12,7 @@ CREATE OR REPLACE FUNCTION lm.p_perimeter(geom geometry)
 RETURNS lm.metric AS 
 $$
 
-SELECT ('Patch Perimeter'::text, St_Perimeter(geom),'Metros'::text)::lm.metric;
+SELECT ('Patch Perimeter'::text, St_Perimeter(geom),'m.'::text)::lm.metric;
 
 $$
 LANGUAGE SQL
