@@ -1,8 +1,9 @@
 /*
+test
 Core Area Percentage Landscape - devuelve la suma de los núcleos de las áreas (m²) de cada polígono correspondiente al tipo de polígono, dividido por el total del área (m²) del paisaje, multiplicado por 100 (unidades: Porcentaje).
 */
 
---SAMPLE USAGE:
+-- SAMPLE USAGE:
 /*
 SELECT lm.c_coreareapercentlandscape(geom, category) As c_coreareapercentlandscape, category FROM lm.sample_patches;
 */
