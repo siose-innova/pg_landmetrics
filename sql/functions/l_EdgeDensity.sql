@@ -4,10 +4,7 @@ Edge Density - devuelve la suma de las longitudes (m) de todos los segmentos del
 
 --SAMPLE USAGE:
 /*
-WITH  patches (geom,categ) AS (VALUES
-                               (ST_GeomFromText('POLYGON((0 0,0 1,1 1,1 0,0 0))',25830),'Urbano'))
-
-SELECT lm.l_edgedensity(geom) As l_edgedensity FROM patches;
+SELECT lm.l_edgedensity(geom) As l_edgedensity FROM lm.sample_patches;
 */
 
 

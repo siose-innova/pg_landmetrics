@@ -4,22 +4,19 @@ Core Area Percentage Landscape - devuelve la suma de los núcleos de las áreas 
 
 --SAMPLE USAGE:
 /*
-WITH  patches (geom,categ) AS (VALUES
-                               (ST_GeomFromText('POLYGON((0 0,0 1,1 1,1 0,0 0))',25830),'Urbano'))
-
-SELECT lm.c_coreareapercentlandscape(geom, categ) As c_coreareapercentlandscape, categ FROM patches;
+SELECT lm.c_coreareapercentlandscape(geom, category) As c_coreareapercentlandscape, category FROM lm.sample_patches;
 */
 
 
-CREATE OR REPLACE FUNCTION lm.c_coreareapercentlandscape(geom geometry, categ text)
-RETURNS double precision AS 
+CREATE OR REPLACE FUNCTION lm.c_coreareapercentlandscape(geom geometry, category text)
+RETURNS lm.metric AS 
 $$
 
-SELECT (SUM(St_Area(St_Buffer(geom, -100)))/SUM(St_Area(geom)))*100 GROUP BY categ;
+SELECT ('Core Area Percentage Landscape'::text, (SUM(St_Area(St_Buffer(geom, -100)))/SUM(St_Area(geom)))*100,'%'::text)::lm.metric GROUP BY category;
 
 $$
 LANGUAGE SQL
 IMMUTABLE
 RETURNS NULL ON NULL INPUT;
 
-COMMENT ON FUNCTION lm.c_coreareapercentlandscape(geom geometry, categ text) IS 'Suma las áreas de los núcleos de cada polígono de la misma categoría dividido por el total del área del paisaje, multiplicado por 100 para devolver un valor en porcentaje.';
+COMMENT ON FUNCTION lm.c_coreareapercentlandscape(geom geometry, category text) IS 'Suma las áreas de los núcleos de cada polígono de la misma categoría dividido por el total del área del paisaje, multiplicado por 100 para devolver un valor en porcentaje.';

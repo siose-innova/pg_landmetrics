@@ -4,22 +4,20 @@ Percentage of Landscape - devuelve la suma de las áreas (m²) de todos los pol�
 
 --SAMPLE USAGE:
 /*
-WITH  patches (geom,categ) AS (VALUES
-                               (ST_GeomFromText('POLYGON((0 0,0 1,1 1,1 0,0 0))',25830),'Urbano'))
-
-SELECT lm.c_percentagelandscape(geom, categ) As c_percentagelandscape, categ FROM patches;
+SELECT lm.c_percentagelandscape(geom, category) As c_percentagelandscape, category FROM lm.sample_patches;
 */
 
 
-CREATE OR REPLACE FUNCTION lm.c_percentagelandscape(geom geometry, categ text)
-RETURNS double precision AS 
+CREATE OR REPLACE FUNCTION lm.c_percentagelandscape(geom geometry, category text)
+RETURNS lm.metric AS 
 $$
 
-SELECT (SUM(St_Area(geom))/SUM(St_Area(geom)))*100 GROUP BY categ;
+SELECT ('Percentage of Landscape'::text, (SUM(St_Area(geom))/SUM(St_Area(geom)))*100,'%'::text)::lm.metric GROUP BY category;
 
 $$
 LANGUAGE SQL
 IMMUTABLE
 RETURNS NULL ON NULL INPUT;
 
-COMMENT ON FUNCTION lm.c_percentagelandscape(geom geometry, categ text) IS 'Calcula la suma de las áreas de los polígonos de la misma categoría dividido por el área total del paisaje, multiplicado por 100 para devolver un valor en porcentaje.';
+COMMENT ON FUNCTION lm.c_percentagelandscape(geom geometry, category text) IS 'Calcula la suma de las áreas de los polígonos de la misma categoría dividido por el área total del paisaje, multiplicado por 100 para devolver un valor en porcentaje.';
+

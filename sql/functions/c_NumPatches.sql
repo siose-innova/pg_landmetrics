@@ -4,22 +4,19 @@ Number of Patches - devuelve el número de polígonos que corresponden a una cat
 
 --SAMPLE USAGE:
 /*
-WITH  patches (geom,categ) AS (VALUES
-                               (ST_GeomFromText('POLYGON((0 0,0 1,1 1,1 0,0 0))',25830),'Urbano'))
-
-SELECT lm.c_numpatches(geom, categ) As c_numpatches, categ FROM patches;
+SELECT lm.c_numpatches(geom, category) As c_numpatches, category FROM lm.sample_patches;
 */
 
 
-CREATE OR REPLACE FUNCTION lm.c_numpatches(geom geometry, categ text)
-RETURNS bigint AS 
+CREATE OR REPLACE FUNCTION lm.c_numpatches(geom geometry, category text)
+RETURNS lm.metric AS 
 $$
 
-SELECT SUM(St_NumGeometries(geom)) GROUP BY categ;
+SELECT ('Number of patches'::text, SUM(St_NumGeometries(geom)),'')::lm.metric GROUP BY category;
 
 $$
 LANGUAGE SQL
 IMMUTABLE
 RETURNS NULL ON NULL INPUT;
 
-COMMENT ON FUNCTION lm.c_numpatches(geom geometry, categ text) IS 'Calcula el número de polígonos de la misma categoría.';
+COMMENT ON FUNCTION lm.c_numpatches(geom geometry, category text) IS 'Calcula el número de polígonos de la misma categoría.';

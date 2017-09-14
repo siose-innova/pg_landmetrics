@@ -4,22 +4,20 @@ Total Edge - devuelve la suma de las longitudes (m) de todos los segmentos de lo
 
 --SAMPLE USAGE:
 /*
-WITH  patches (geom,categ) AS (VALUES
-                               (ST_GeomFromText('POLYGON((0 0,0 1,1 1,1 0,0 0))',25830),'Urbano'))
-
-SELECT lm.c_totaledge(geom, categ) As c_totaledge, categ FROM patches;
+SELECT lm.c_totaledge(geom, category) As c_totaledge, category FROM lm.sample_patches;
 */
 
 
-CREATE OR REPLACE FUNCTION lm.c_totaledge(geom geometry, categ text)
-RETURNS double precision AS 
+CREATE OR REPLACE FUNCTION lm.c_totaledge(geom geometry, category text)
+RETURNS lm.metric AS 
 $$
 
-SELECT SUM(St_Perimeter(geom)) GROUP BY categ;
+SELECT ('Total Edge'::text, SUM(St_Perimeter(geom)),'Metros.'::text)::lm.metric GROUP BY category;
 
 $$
 LANGUAGE SQL
 IMMUTABLE
 RETURNS NULL ON NULL INPUT;
 
-COMMENT ON FUNCTION lm.c_totaledge(geom geometry, categ text) IS 'Suma de las longitudes de los bordes de los polígonos de la misma categoría para devolver un valor en Metros.';
+COMMENT ON FUNCTION lm.c_totaledge(geom geometry, category text) IS 'Suma de las longitudes de los bordes de los polígonos de la misma categoría para devolver un valor en Metros.';
+
