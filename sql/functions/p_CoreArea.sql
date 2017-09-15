@@ -1,20 +1,18 @@
 /*
-Core Area
-Descripción: devuelve el área interior del polígono que está más allá de la profundidad especificada del borde del perímetro del polígono, dividido por 10,000 (unidades: Hectáreas).
+Core Area - devuelve el área interior del polígono que está más allá de la profundidad especificada del borde del perímetro del polígono, dividido por 10,000 (unidades: Hectáreas).
 */
 
 --SAMPLE USAGE:
 /*
-SELECT lm.p_corearea(geom) As p_corearea
-FROM (SELECT ST_GeomFromText('POLYGON((0 0, 0 10000, 10000 10000, 10000 0, 0 0))',25830)) As foo(geom);
+SELECT lm.p_corearea(geom) As p_corearea FROM lm.sample_patches;
 */
 
 
 CREATE OR REPLACE FUNCTION lm.p_corearea(geom geometry)
-RETURNS double precision AS 
+RETURNS lm.metric AS 
 $$
 
-SELECT St_Area(St_Buffer(geom, -100))/10000;
+SELECT ('Core Area'::text, St_Area(St_Buffer(geom, -100))/10000, 'Ha.'::text)::lm.metric;
 
 $$
 LANGUAGE SQL

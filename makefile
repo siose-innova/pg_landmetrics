@@ -20,8 +20,9 @@ ifeq ($(PG95),yes)
 
 all: $(EXTENSION)--$(EXTVERSION).sql
 
-$(EXTENSION)--$(EXTVERSION).sql: sql/functions/*.sql
-
+$(EXTENSION)--$(EXTVERSION).sql: sql/types/*.sql \
+				sql/functions/*.sql
+				
 	         cat $^ > $@
 
 DATA           = $(wildcard updates/*--*.sql) $(EXTENSION)--$(EXTVERSION).sql

@@ -1,20 +1,18 @@
 /*
-Perimeter Area Ratio
-Descripción: devuelve la relación entre el perímetro (m) del polígono y el área (m²).
+Perimeter Area Ratio - devuelve la relación entre el perímetro (m) del polígono y el área (m²).
 */
 
 --SAMPLE USAGE:
 /*
-SELECT lm.p_perimarearatio(geom) As p_perimarearatio
-FROM (SELECT ST_GeomFromText('POLYGON((0 0, 0 10000, 10000 10000, 10000 0, 0 0))',25830)) As foo(geom);
+SELECT lm.p_perimarearatio(geom) As p_perimarearatio FROM lm.sample_patches;
 */
 
 
 CREATE OR REPLACE FUNCTION lm.p_perimarearatio(geom geometry)
-RETURNS double precision AS 
+RETURNS lm.metric AS 
 $$
 
-SELECT St_Perimeter(geom)/St_Area(geom);
+SELECT ('Perimeter Area Ratio'::text, St_Perimeter(geom)/St_Area(geom),'')::lm.metric;
 
 $$
 LANGUAGE SQL

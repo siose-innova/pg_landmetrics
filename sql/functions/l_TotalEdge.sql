@@ -1,12 +1,13 @@
 /*
-Total Edge
-Descripción: devuelve la suma de las longitudes (m) de todos los segmentos de los bordes en el paisaje.
+Total Edge - devuelve la suma de las longitudes (m) de todos los segmentos de los bordes en el paisaje.
 */
 
 --SAMPLE USAGE:
 /*
-SELECT lm.l_totaledge(geom) As l_totaledge
-FROM (SELECT ST_GeomFromText('POLYGON((0 0, 0 10000, 10000 10000, 10000 0, 0 0))',25830)) As foo(geom);
+WITH  patches (geom,categ) AS (VALUES
+                               (ST_GeomFromText('POLYGON((0 0,0 1,1 1,1 0,0 0))',25830),'Urbano'))
+
+SELECT lm.l_totaledge(geom) As l_totaledge FROM patches;
 */
 
 

@@ -14,7 +14,6 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_DB: lm
     volumes: # named volumes, use compose -v to remove them.
-      - .:/source
       - postgres_data:/var/lib/postgresql/:rw
       - postgres_backups:/backups
     networks:
@@ -27,7 +26,8 @@ services:
     links:
       - db
     volumes:
-      - /data/pgadmin:/root/.pgadmin # pgadmin4 user and session data (SQLITE)
+      - ./.pgadmin4:/var/lib/pgadmin4/data # pgadmin4 user and session data (SQLITE)
+      - .:/var/lib/pgadmin4/data/storage/pgadmin4
     ports:
       - "5050:5050"
     environment:

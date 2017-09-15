@@ -1,14 +1,14 @@
 ## Nombre
-lm.patch_shape --  Devuelve el perímetro (m) del polígono dividido por la raíz cuadrada del área (m²) del polígono, ajustado por una constante de ajuste para un estándar cuadrático.
+lm.patch_shapeindex --  Devuelve el perímetro (m) del polígono dividido por la raíz cuadrada del área (m²) del polígono, ajustado por una constante de ajuste para un estándar cuadrático.
 
 ## Synopsis
 
 ```sql
-float p_shape(geometry geom);
+float p_shapeindex(geometry geom);
 ```
 
 ```tex
-\[SHAPE= \frac{.25 p_{ij}}{\sqrt{a_{ij}}}\]
+\[SHAPE= \frac{.25 P_{ij}}{\sqrt{a_{ij}}}\]
 ```
 
 ## Descripción
@@ -20,9 +20,10 @@ Descripción más elaborada, con ejemplos de uso en la literatura científica. �
 
 ## Ejemplos (autocontenidos)
 
-
 ```sql
-SELECT St_Perimeter(col_name geometry)/(|/St_Area(col_name geometry) FROM table_name;
+WITH  patches (geom,categ) AS (VALUES
+                               (ST_GeomFromText('POLYGON((0 0,0 1,1 1,1 0,0 0))',25830),'Urbano'))
+SELECT lm.p_shapeindex(geom) As p_shape FROM patches;
 ```
 
 ## Referencias

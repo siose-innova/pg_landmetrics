@@ -21,7 +21,10 @@ Descripción más elaborada, con ejemplos de uso en la literatura científica. �
 
 
 ```sql
-SELECT (SUM(St_Perimeter(col_name geometry))/SUM(St_Area(col_name geometry)))*10000 FROM table_name GROUP BY label;
+WITH  patches (geom,categ) AS (VALUES
+                               (ST_GeomFromText('POLYGON((0 0,0 1,1 1,1 0,0 0))',25830),'Urbano'))
+
+SELECT lm.c_edgedensity(geom, categ) As c_edgedensity, categ FROM patches;
 ```
 
 ## Referencias
