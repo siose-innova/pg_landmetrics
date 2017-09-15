@@ -32,4 +32,4 @@ RETURN (m_name,m_value,m_unit)::lm.metric;
 END
 $BODY$;
 
-COMMENT ON FUNCTION lm.l_totalarea(geom geometry) IS 'Calcula el área total del paisaje dividida por 10.000 para devolver un valor en Hectáreas.';
+COMMENT ON FUNCTION lm.l_totalarea(tblname text, geom_colname text) IS 'Calcula el área total del paisaje dividida por 10.000 para devolver un valor en Hectáreas.';
