@@ -26,7 +26,7 @@ services:
     links:
       - db
     volumes:
-      - ./.pgadmin4:/var/lib/pgadmin4/data # pgadmin4 user and session data (SQLITE)
+#      - ./.pgadmin4:/var/lib/pgadmin4/data # pgadmin4 user and session data (SQLITE)
       - .:/var/lib/pgadmin4/data/storage/pgadmin4
     ports:
       - "5050:5050"
