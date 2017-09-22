@@ -1,0 +1,18 @@
+2017-09-19 09:41:53,079: ERROR	pgadmin:	
+Failed to execute query (execute_async) for the server #1 - CONN:2536795
+(Query-id: 9843114):
+Error Message:ERROR:  function lm.p_area(lm.metric, geometry) does not exist
+********** Error **********
+
+ERROR: function lm.p_area(lm.metric, geometry) does not exist
+SQL state: 42883
+
+2017-09-19 10:21:40,131: ERROR	pgadmin:	
+Failed to execute query (execute_async) for the server #1 - CONN:2536795
+(Query-id: 3683721):
+Error Message:ERROR:  function p_area_state(lm.metric, geometry) does not exist
+********** Error **********
+
+ERROR: function p_area_state(lm.metric, geometry) does not exist
+SQL state: 42883
+
