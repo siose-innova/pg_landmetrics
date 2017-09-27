@@ -1,5 +1,5 @@
 /*
-Core Area - devuelve el área interior del polígono que está más allá de la profundidad especificada del borde del perímetro del polígono, dividido por 10,000 (unidades: Hectáreas).
+Core Area - devuelve el área interior del polígono que está más allá de la profundidad especificada del borde del perímetro del polígono, dividido por 10.000 (unidades: Hectáreas).
 */
 
 --SAMPLE USAGE:
@@ -19,4 +19,4 @@ LANGUAGE SQL
 IMMUTABLE
 RETURNS NULL ON NULL INPUT;
 
-COMMENT ON FUNCTION lm.p_corearea(geom geometry) IS 'Calcula el área interior del polígono dividido por 10,000 para devolver un valor en Hectáreas.';
+COMMENT ON FUNCTION lm.p_corearea(geom geometry) IS 'Calcula el área interior del polígono dividido por 10.000 para devolver un valor en Hectáreas.';

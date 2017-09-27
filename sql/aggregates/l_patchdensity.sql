@@ -1,6 +1,6 @@
 /*
 Patch Density
-Descripción: devuelve el número de polígonos del paisaje dividido por el área total (m²) del paisaje, multiplicado por 10,000 (unidades: Número por 100 hectáreas).
+Descripción: devuelve el número de polígonos del paisaje dividido por el área total (m²) del paisaje, multiplicado por 10.000 (unidades: Número por 100 hectáreas).
 */
 
 --SAMPLE USAGE:
@@ -24,4 +24,4 @@ CREATE AGGREGATE lm.l_patchdensity(geometry)(
     INITCOND='("Patch Density",0,"")'
 );
 
-COMMENT ON AGGREGATE lm.l_patchdensity(geometry) IS 'Calcula el número total de polígonos en el paisaje dividido por el área total del paisaje multiplicado por 10,000 para devolver un valor en número por 100 Hectáreas.';
+COMMENT ON AGGREGATE lm.l_patchdensity(geometry) IS 'Calcula el número total de polígonos en el paisaje dividido por el área total del paisaje multiplicado por 10.000 para devolver un valor en número por 100 Hectáreas.';

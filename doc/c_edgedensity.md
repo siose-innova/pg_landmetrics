@@ -1,5 +1,5 @@
 ## Nombre
-lm.class_edgedensity --  Devuelve la suma de las longitudes (m) de todos los segmentos de los bordes correspondientes al tipo de polígono dividido por el total del área (m²) del paisaje, multiplicado por 10,000 (unidades: Metros por hectárea).
+lm.class_edgedensity --  Devuelve la suma de las longitudes (m) de todos los segmentos de los bordes correspondientes al tipo de polígono dividido por el total del área (m²) del paisaje, multiplicado por 10.000 (unidades: Metros por hectárea).
 ## Synopsis
 
 ```sql
@@ -7,7 +7,7 @@ float c_edgedensity(geometry geom);
 ```
 
 ```tex
-\[ED= \frac{\sum_{k=1}^{m} e_{ik}}{A}\left ( 10,000 \right )\]
+\[ED= \frac{\sum_{k=1}^{m} e_{ik}}{A}\left ( 10.000 \right )\]
 ```
 
 ## Descripción

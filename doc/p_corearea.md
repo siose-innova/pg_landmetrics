@@ -1,5 +1,5 @@
 ## Nombre
-lm.patch_corearea --  Devuelve el área interior del polígono que está más allá de la profundidad especificada del borde del perímetro del polígono, dividido por 10,000 (unidades: Hectáreas).
+lm.patch_corearea --  Devuelve el área interior del polígono que está más allá de la profundidad especificada del borde del perímetro del polígono, dividido por 10.000 (unidades: Hectáreas).
 
 ## Synopsis
 
@@ -10,7 +10,7 @@ geometry p_corearea(geometry geom, float radius_buffer);
 ```
 
 ```tex
-\[CORE= a_{ij}^{c}\left ( \frac{1}{10,000} \right )\]
+\[CORE= a_{ij}^{c}\left ( \frac{1}{10.000} \right )\]
 ```
 
 ## Descripción

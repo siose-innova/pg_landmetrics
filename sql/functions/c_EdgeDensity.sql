@@ -1,5 +1,5 @@
 /*
-Edge Density - devuelve la suma de las longitudes (m) de todos los segmentos de los bordes correspondientes al tipo de polígono dividido por el total del área (m²) del paisaje, multiplicado por 10,000 (unidades: metros por Hectárea).
+Edge Density - devuelve la suma de las longitudes (m) de todos los segmentos de los bordes correspondientes al tipo de polígono dividido por el total del área (m²) del paisaje, multiplicado por 10.000 (unidades: metros por Hectárea).
 */
 
 --SAMPLE USAGE:
@@ -19,4 +19,4 @@ LANGUAGE SQL
 IMMUTABLE
 RETURNS NULL ON NULL INPUT;
 
-COMMENT ON FUNCTION lm.c_edgedensity(geom geometry, category text) IS 'Suma de las longitudes de los bordes de los polígonos de la misma categoría dividido por el total del área, multiplicado por 10,000 para devolver un valor en metros por Hectárea.';
+COMMENT ON FUNCTION lm.c_edgedensity(geom geometry, category text) IS 'Suma de las longitudes de los bordes de los polígonos de la misma categoría dividido por el total del área, multiplicado por 10.000 para devolver un valor en metros por Hectárea.';

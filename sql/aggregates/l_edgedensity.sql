@@ -1,5 +1,5 @@
 /*
-Edge Density - devuelve la suma de las longitudes (m) de todos los segmentos del paisaje dividido por el área total (m²) del paisaje, multiplicado por 10,000 (unidades: Metros por hectárea).
+Edge Density - devuelve la suma de las longitudes (m) de todos los segmentos del paisaje dividido por el área total (m²) del paisaje, multiplicado por 10.000 (unidades: Metros por hectárea).
 */
 
 --SAMPLE USAGE:
@@ -23,4 +23,4 @@ CREATE AGGREGATE lm.l_edgedensity(geometry)(
     INITCOND='("Edge Density",0,"m/Ha")'
 );
 
-COMMENT ON AGGREGATE lm.l_edgedensity(geometry) IS 'Suma las longitudes de todos los bordes del paisaje dividido por el área total del paisaje multiplicado por 10,000 para devolver un valor en metros por Hectárea.';
+COMMENT ON AGGREGATE lm.l_edgedensity(geometry) IS 'Suma las longitudes de todos los bordes del paisaje dividido por el área total del paisaje multiplicado por 10.000 para devolver un valor en metros por Hectárea.';

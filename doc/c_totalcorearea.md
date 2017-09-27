@@ -1,5 +1,5 @@
 ## Nombre
-lm.class_totalcorearea --  Devuelve la suma de los núcleos de las áreas (m²) de cada polígono correspondiente al tipo de polígono, dividido por 10,000 (unidades: Hectáreas).
+lm.class_totalcorearea --  Devuelve la suma de los núcleos de las áreas (m²) de cada polígono correspondiente al tipo de polígono, dividido por 10.000 (unidades: Hectáreas).
 
 ## Synopsis
 
@@ -10,7 +10,7 @@ geometry c_totalcorearea(geometry geom, float radius_buffer);
 ```
 
 ```tex
-\[TCA= \sum_{j=1}^{n}a{_{ij}}^{c}\left ( \frac{1}{10,000} \right )\]
+\[TCA= \sum_{j=1}^{n}a{_{ij}}^{c}\left ( \frac{1}{10.000} \right )\]
 ```
 
 ## Descripción

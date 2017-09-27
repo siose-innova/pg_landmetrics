@@ -1,5 +1,5 @@
 ## Nombre
-lm.patch_area --  Devuelve la suma del área (m²) del polígono dividido por 10,000 (unidades: Hectáreas).
+lm.patch_area --  Devuelve la suma del área (m²) del polígono dividido por 10.000 (unidades: Hectáreas).
 
 ## Synopsis
 
@@ -8,7 +8,7 @@ float p_area(geometry geom);
 ```
 
 ```tex
-\[AREA= a_{ij}\left ( \frac{1}{10,000} \right )\]
+\[AREA= a_{ij}\left ( \frac{1}{10.000} \right )\]
 ```
 
 ## Descripción
