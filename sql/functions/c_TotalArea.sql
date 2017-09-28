@@ -9,10 +9,10 @@ SELECT lm.c_totalarea(geom, category) As c_totalarea, category FROM lm.sample_pa
 
 
 CREATE OR REPLACE FUNCTION lm.c_totalarea(geom geometry, category text)
-RETURNS lm.metric AS 
+RETURNS lm.simple_metric AS 
 $$
 
-SELECT ('Total Area'::text, SUM(St_Area(geom))/10000,'Hectáreas.'::text)::lm.metric GROUP BY category;
+SELECT ('Total Area'::text, SUM(St_Area(geom))/10000,'Hectáreas.'::text)::lm.simple_metric GROUP BY category;
 
 $$
 LANGUAGE SQL

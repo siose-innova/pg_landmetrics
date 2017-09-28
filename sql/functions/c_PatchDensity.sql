@@ -9,10 +9,10 @@ SELECT lm.c_patchdensity(geom, category) As c_patchdensity, category FROM lm.sam
 
 
 CREATE OR REPLACE FUNCTION lm.c_patchdensity(geom geometry, category text)
-RETURNS lm.metric AS 
+RETURNS lm.simple_metric AS 
 $$
 
-SELECT ('Patch Density'::text, ((SUM(St_NumGeometries(geom))/SUM(St_Area(geom)))*10000)*100,'por 100 Hectáreas'::text)::lm.metric GROUP BY category;
+SELECT ('Patch Density'::text, ((SUM(St_NumGeometries(geom))/SUM(St_Area(geom)))*10000)*100,'por 100 Hectáreas'::text)::lm.simple_metric GROUP BY category;
 
 $$
 LANGUAGE SQL

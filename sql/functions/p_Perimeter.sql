@@ -9,10 +9,10 @@ SELECT lm.p_perimeter(geom) As p_perimeter FROM lm.sample_patches;
 
 
 CREATE OR REPLACE FUNCTION lm.p_perimeter(geom geometry)
-RETURNS lm.metric AS 
+RETURNS lm.simple_metric AS 
 $$
 
-SELECT ('Patch Perimeter'::text, St_Perimeter(geom),'m.'::text)::lm.metric;
+SELECT ('Patch Perimeter'::text, St_Perimeter(geom),'m.'::text)::lm.simple_metric;
 
 $$
 LANGUAGE SQL

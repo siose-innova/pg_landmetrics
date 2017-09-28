@@ -10,10 +10,10 @@ SELECT lm.c_coreareapercentlandscape(geom, category) As c_coreareapercentlandsca
 
 
 CREATE OR REPLACE FUNCTION lm.c_coreareapercentlandscape(geom geometry, category text)
-RETURNS lm.metric AS 
+RETURNS lm.simple_metric AS 
 $$
 
-SELECT ('Core Area Percentage Landscape'::text, (SUM(St_Area(St_Buffer(geom, -100)))/SUM(St_Area(geom)))*100,'%'::text)::lm.metric GROUP BY category;
+SELECT ('Core Area Percentage Landscape'::text, (SUM(St_Area(St_Buffer(geom, -100)))/SUM(St_Area(geom)))*100,'%'::text)::lm.simple_metric GROUP BY category;
 
 $$
 LANGUAGE SQL

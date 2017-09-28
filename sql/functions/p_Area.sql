@@ -8,10 +8,10 @@ SELECT lm.p_area(geom) As p_area FROM lm.sample_patches;
 */
 
 CREATE OR REPLACE FUNCTION lm.p_area(geom geometry)
-RETURNS lm.metric AS 
+RETURNS lm.simple_metric AS 
 $$
 
-SELECT ('Patch Area'::text, St_Area(geom)/10000, 'Ha.'::text)::lm.metric;
+SELECT ('Patch Area'::text, St_Area(geom)/10000, 'Ha.'::text)::lm.simple_metric;
 
 $$
 LANGUAGE SQL

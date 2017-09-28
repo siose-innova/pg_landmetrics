@@ -9,10 +9,10 @@ SELECT lm.p_coreareaindex(geom) As p_coreareaindex FROM lm.sample_patches;
 
 
 CREATE OR REPLACE FUNCTION lm.p_coreareaindex(geom geometry)
-RETURNS lm.metric AS 
+RETURNS lm.simple_metric AS 
 $$
 
-SELECT ('Core Area Index'::text, (St_Area(St_Buffer(geom, -100))/St_Area(geom))*100, '%'::text)::lm.metric;
+SELECT ('Core Area Index'::text, (St_Area(St_Buffer(geom, -100))/St_Area(geom))*100, '%'::text)::lm.simple_metric;
 
 $$
 LANGUAGE SQL
