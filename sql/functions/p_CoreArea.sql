@@ -9,10 +9,10 @@ SELECT lm.p_corearea(geom) As p_corearea FROM lm.sample_patches;
 
 
 CREATE OR REPLACE FUNCTION lm.p_corearea(geom geometry)
-RETURNS lm.simple_metric AS 
+RETURNS lm.metric AS 
 $$
 
-SELECT ('Core Area'::text, St_Area(St_Buffer(geom, -100))/10000, 'Ha.'::text)::lm.simple_metric;
+SELECT ('Core Area'::text, St_Area(St_Buffer(geom, -100))/10000, 'Ha.'::text)::lm.metric;
 
 $$
 LANGUAGE SQL

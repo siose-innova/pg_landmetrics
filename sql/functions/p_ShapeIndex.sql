@@ -9,10 +9,10 @@ SELECT lm.p_shapeindex(geom) As p_shape FROM lm.sample_patches;
 
 
 CREATE OR REPLACE FUNCTION lm.p_shapeindex(geom geometry)
-RETURNS lm.simple_metric AS 
+RETURNS lm.metric AS 
 $$
 
-SELECT ('Shape Index'::text, St_Perimeter(geom)/sqrt(St_Area(geom)),'')::lm.simple_metric;
+SELECT ('Shape Index'::text, St_Perimeter(geom)/sqrt(St_Area(geom)),'')::lm.metric;
 
 $$
 LANGUAGE SQL

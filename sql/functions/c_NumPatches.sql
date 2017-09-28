@@ -9,10 +9,10 @@ SELECT lm.c_numpatches(geom, category) As c_numpatches, category FROM lm.sample_
 
 
 CREATE OR REPLACE FUNCTION lm.c_numpatches(geom geometry, category text)
-RETURNS lm.simple_metric AS 
+RETURNS lm.metric AS 
 $$
 
-SELECT ('Number of patches'::text, SUM(St_NumGeometries(geom)),'')::lm.simple_metric GROUP BY category;
+SELECT ('Number of patches'::text, SUM(St_NumGeometries(geom)),'')::lm.metric GROUP BY category;
 
 $$
 LANGUAGE SQL

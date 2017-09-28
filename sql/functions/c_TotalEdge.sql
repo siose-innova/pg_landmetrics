@@ -9,10 +9,10 @@ SELECT lm.c_totaledge(geom, category) As c_totaledge, category FROM lm.sample_pa
 
 
 CREATE OR REPLACE FUNCTION lm.c_totaledge(geom geometry, category text)
-RETURNS lm.simple_metric AS 
+RETURNS lm.metric AS 
 $$
 
-SELECT ('Total Edge'::text, SUM(St_Perimeter(geom)),'Metros.'::text)::lm.simple_metric GROUP BY category;
+SELECT ('Total Edge'::text, SUM(St_Perimeter(geom)),'Metros.'::text)::lm.metric GROUP BY category;
 
 $$
 LANGUAGE SQL

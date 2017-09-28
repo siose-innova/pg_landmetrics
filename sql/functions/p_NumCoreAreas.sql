@@ -9,10 +9,10 @@ SELECT lm.p_numcoreareas(geom) As p_numcoreareas FROM lm.sample_patches;
 
 
 CREATE OR REPLACE FUNCTION lm.p_numcoreareas(geom geometry)
-RETURNS lm.simple_metric AS 
+RETURNS lm.metric AS 
 $$
 
-SELECT ('Number of Core Areas'::text, St_NumGeometries(St_Buffer(geom, -100)),'')::lm.simple_metric;
+SELECT ('Number of Core Areas'::text, St_NumGeometries(St_Buffer(geom, -100)),'')::lm.metric;
 
 $$
 LANGUAGE SQL

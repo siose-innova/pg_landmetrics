@@ -9,10 +9,10 @@ SELECT lm.c_totalcorearea(geom, category) As c_totalcorearea, category FROM lm.s
 
 
 CREATE OR REPLACE FUNCTION lm.c_totalcorearea(geom geometry, category text)
-RETURNS lm.simple_metric AS 
+RETURNS lm.metric AS 
 $$
 
-SELECT ('Total Core Area'::text, SUM(St_Area(St_Buffer(geom, -100)))/10000,'Hectáreas.'::text)::lm.simple_metric GROUP BY category;
+SELECT ('Total Core Area'::text, SUM(St_Area(St_Buffer(geom, -100)))/10000,'Hectáreas.'::text)::lm.metric GROUP BY category;
 
 $$
 LANGUAGE SQL

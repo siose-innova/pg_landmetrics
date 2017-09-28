@@ -8,17 +8,17 @@ SELECT lm.l_numpatches(geom) FROM lm.sample_patches;
 */
 
 
-CREATE OR REPLACE FUNCTION lm.l_numpatches_state(lm.simple_metric, geometry)
-    RETURNS lm.simple_metric AS
+CREATE OR REPLACE FUNCTION lm.l_numpatches_state(lm.metric, geometry)
+    RETURNS lm.metric AS
 $$
-	SELECT ('Number of Patches'::text, ($1).value + SUM(St_NumGeometries($2)), ''::text)::lm.simple_metric;
+	SELECT ('Number of Patches'::text, ($1).value + SUM(St_NumGeometries($2)), ''::text)::lm.metric;
 $$
 LANGUAGE 'sql' IMMUTABLE;
 
 
 CREATE AGGREGATE lm.l_numpatches(geometry)(
     SFUNC=lm.l_numpatches_state,
-    STYPE=lm.simple_metric,
+    STYPE=lm.metric,
     INITCOND='("Number of Patches",0,"")'
 );
 

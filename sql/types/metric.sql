@@ -1,4 +1,4 @@
-CREATE TYPE lm.simple_metric AS (
+CREATE TYPE lm.metric AS (
     name text,
     value numeric,
     units text

@@ -8,17 +8,17 @@ SELECT lm.l_totaledge(geom) FROM lm.sample_patches;
 */
 
 
-CREATE OR REPLACE FUNCTION lm.l_totaledge_state(lm.simple_metric,geometry)
-    RETURNS lm.simple_metric AS
+CREATE OR REPLACE FUNCTION lm.l_totaledge_state(lm.metric,geometry)
+    RETURNS lm.metric AS
 $$
-	SELECT ('Total Edge'::text, ($1).value + SUM(St_Perimeter($2))/10000, ''::text)::lm.simple_metric;
+	SELECT ('Total Edge'::text, ($1).value + SUM(St_Perimeter($2))/10000, ''::text)::lm.metric;
 $$
 LANGUAGE 'sql' IMMUTABLE;
 
 
 CREATE AGGREGATE lm.l_totaledge(geometry)(
     SFUNC=lm.l_totaledge_state,
-    STYPE=lm.simple_metric,
+    STYPE=lm.metric,
     INITCOND='("Total Edge",0,"")'
 );
 

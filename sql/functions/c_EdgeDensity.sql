@@ -9,10 +9,10 @@ SELECT lm.c_edgedensity(geom, category) As c_edgedensity, category FROM lm.sampl
 
 
 CREATE OR REPLACE FUNCTION lm.c_edgedensity(geom geometry, category text)
-RETURNS lm.simple_metric AS 
+RETURNS lm.metric AS 
 $$
 
-SELECT ('Edge Density'::text, (SUM(St_Perimeter(geom))/SUM(St_Area(geom)))*10000,'metros por Hectárea.'::text)::lm.simple_metric GROUP BY category;
+SELECT ('Edge Density'::text, (SUM(St_Perimeter(geom))/SUM(St_Area(geom)))*10000,'metros por Hectárea.'::text)::lm.metric GROUP BY category;
 
 $$
 LANGUAGE SQL
