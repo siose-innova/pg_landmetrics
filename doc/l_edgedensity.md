@@ -1,5 +1,5 @@
 ## Nombre
-lm.landscape_edgedensity --  Devuelve la suma de las longitudes (m) de todos los segmentos del paisaje dividido por el área total (m²) del paisaje, multiplicado por 10,000 (unidades: Metros por hectárea).
+lm.landscape_edgedensity --  Devuelve la suma de las longitudes (m) de todos los segmentos del paisaje dividido por el área total (m²) del paisaje, multiplicado por 10.000 (unidades: Metros por hectárea).
 
 ## Synopsis
 
@@ -8,7 +8,7 @@ float l_edgedensity(geometry geom);
 ```
 
 ```tex
-\[ED= \frac{E}{A}\left ( 10,000 \right )\]
+\[ED= \frac{E}{A}\left ( 10.000 \right )\]
 ```
 
 ## Descripción

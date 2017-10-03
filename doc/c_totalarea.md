@@ -1,5 +1,5 @@
 ## Nombre
-lm.class_totalarea --  Devuelve la suma de las áreas (m²) de todos los polígonos correspondientes al tipo de polígono, dividido por 10,000 (unidades: Hectáreas).
+lm.class_totalarea --  Devuelve la suma de las áreas (m²) de todos los polígonos correspondientes al tipo de polígono, dividido por 10.000 (unidades: Hectáreas).
 
 ## Synopsis
 
@@ -8,7 +8,7 @@ float c_totalarea(geometry geom);
 ```
 
 ```tex
-\[CA= \sum_{j=1}^{n} a_{ij}\left ( \frac{1}{10,000} \right )\]
+\[CA= \sum_{j=1}^{n} a_{ij}\left ( \frac{1}{10.000} \right )\]
 ```
 
 ## Descripción

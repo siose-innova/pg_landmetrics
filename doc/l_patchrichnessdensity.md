@@ -1,5 +1,5 @@
 ## Nombre
-lm.landscape_patchrichnessdensity --  Devuelve el número de las diferentes categorías de polígonos presentes dentro del límite del paisaje dividido por el área total (m²) del paisaje, multiplicado por 10,000 y 100 (unidades: número por 100 hectáreas).
+lm.landscape_patchrichnessdensity --  Devuelve el número de las diferentes categorías de polígonos presentes dentro del límite del paisaje dividido por el área total (m²) del paisaje, multiplicado por 10.000 y 100 (unidades: número por 100 hectáreas).
 
 ## Synopsis
 
@@ -10,7 +10,7 @@ count(distinct label);
 ```
 
 ```tex
-\[PRD= \frac{m}{A}\left ( 10,000 \right )\left ( 100 \right )\]
+\[PRD= \frac{m}{A}\left ( 10.000 \right )\left ( 100 \right )\]
 ```
 
 ## Descripción

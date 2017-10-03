@@ -1,5 +1,5 @@
 ## Nombre
-lm.patch_perimeter --  Devuelve el perímetro del polígono, incluyendi algún vacío interno (unidades: Metros).
+lm.patch_perimeter --  Devuelve el perímetro del polígono, incluyendo algún vacío interno (unidades: Metros).
 
 ## Synopsis
 

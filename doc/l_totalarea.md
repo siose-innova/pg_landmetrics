@@ -1,5 +1,5 @@
 ## Nombre
-lm.landscape_totalarea --  Devuelve el total del área (m²) del paisaje dividido por 10,000 (unidades: Hectáreas).
+lm.landscape_totalarea --  Devuelve el total del área (m²) del paisaje dividido por 10.000 (unidades: Hectáreas).
 
 ## Synopsis
 
@@ -8,7 +8,7 @@ float l_totalarea(geometry geom);
 ```
 
 ```tex
-\[TA= A\left ( \frac{1}{10,000} \right )\]
+\[TA= A\left ( \frac{1}{10.000} \right )\]
 ```
 
 ## Descripción

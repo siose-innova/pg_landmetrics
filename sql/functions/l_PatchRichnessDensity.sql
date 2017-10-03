@@ -1,5 +1,5 @@
 /*
-Patch Richness Density - devuelve el número de las diferentes categorías de polígonos presentes dentro del límite del paisaje dividido por el área total (m²) del paisaje, multiplicado por 10,000 y 100 (unidades: número por 100 hectáreas).
+Patch Richness Density - devuelve el número de las diferentes categorías de polígonos presentes dentro del límite del paisaje dividido por el área total (m²) del paisaje, multiplicado por 10.000 y 100 (unidades: número por 100 hectáreas).
 */
 
 --SAMPLE USAGE:
@@ -21,4 +21,4 @@ LANGUAGE SQL
 IMMUTABLE
 RETURNS NULL ON NULL INPUT;
 
-COMMENT ON FUNCTION lm.l_patchrichnessdensity(geom geometry, categ text) IS 'Número total de las distintas categorías del paisaje entre el área total por 10,000 y 100 para devolver un resultado en número por 100 Hectáreas.';
+COMMENT ON FUNCTION lm.l_patchrichnessdensity(geom geometry, categ text) IS 'Número total de las distintas categorías del paisaje entre el área total por 10.000 y 100 para devolver un resultado en número por 100 Hectáreas.';

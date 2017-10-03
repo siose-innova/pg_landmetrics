@@ -21,7 +21,8 @@ ifeq ($(PG95),yes)
 all: $(EXTENSION)--$(EXTVERSION).sql
 
 $(EXTENSION)--$(EXTVERSION).sql: sql/types/*.sql \
-				sql/functions/*.sql
+				sql/functions/*.sql \
+				sql/aggregates/*.sql
 				
 	         cat $^ > $@
 

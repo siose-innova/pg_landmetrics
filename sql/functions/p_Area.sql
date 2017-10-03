@@ -1,5 +1,5 @@
 /*
-Patch Area - devuelve la suma del área del polígono dividido por 10,000 (unidades: Hectáreas).
+Patch Area - devuelve la suma del área del polígono dividido por 10.000 (unidades: Hectáreas).
 */
 
 --SAMPLE USAGE:

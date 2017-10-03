@@ -1,5 +1,5 @@
 ## Nombre
-lm.landscape_patchdensity --  Devuelve el número de polígonos del paisaje dividido por el área total (m²) del paisaje, multiplicado por 10,000 (unidades: Número por 100 hectáreas).
+lm.landscape_patchdensity --  Devuelve el número de polígonos del paisaje dividido por el área total (m²) del paisaje, multiplicado por 10.000 (unidades: Número por 100 hectáreas).
 
 ## Synopsis
 
@@ -10,7 +10,7 @@ integer l_patchdensity(geometry geom);
 ```
 
 ```tex
-\[PD= \frac{N}{A}\left ( 10,000 \right )\left ( 100 \right )\]
+\[PD= \frac{N}{A}\left ( 10.000 \right )\left ( 100 \right )\]
 ```
 
 ## Descripción
