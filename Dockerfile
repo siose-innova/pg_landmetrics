@@ -5,7 +5,7 @@ WORKDIR /install-ext
 ADD doc doc/
 ADD sql sql/
 #ADD test test/
-ADD makefile makefile
+ADD Makefile Makefile
 ADD META.json META.json
 ADD pg_landmetrics.control pg_landmetrics.control
 

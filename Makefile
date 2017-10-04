@@ -22,7 +22,8 @@ all: $(EXTENSION)--$(EXTVERSION).sql
 
 $(EXTENSION)--$(EXTVERSION).sql: sql/types/*.sql \
 				sql/functions/*.sql \
-				sql/aggregates/*.sql
+				sql/aggregates/*.sql \
+				sql/tables/*.sql
 				
 	         cat $^ > $@
 
