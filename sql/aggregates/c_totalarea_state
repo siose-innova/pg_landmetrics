@@ -48,3 +48,27 @@ SELECT lm.c_totalarea_agg(geom,category) FROM lm.sample_patches;
 SELECT SUM((lm.p_area(geom)).value)  FROM lm.sample_patches WHERE category='Agricultural area' GROUP BY category;
 
 -- SELECT lm.c_totalarea_state(ARRAY[('Agricultural area',('Total Class Area'::text, 10, 'Ha.'::text))::lm.metric2], geom, category) FROM lm.sample_patches;
+
+
+
+CREATE OR REPLACE FUNCTION lm.c_totalarea_state(
+	current_state lm.metric2[],
+	geom geometry,
+	category text)
+    RETURNS "lm.metric2[]"
+    LANGUAGE 'sql'
+
+AS $BODY$
+
+WITH inputs AS (
+    SELECT current_state AS cstate
+), melt AS (
+    SELECT unnest(cstate) AS m2 FROM inputs
+    UNION 
+    SELECT (category,('Total Class Area'::text, (lm.p_area(geom)).value, 'Ha.'::text))::lm.metric2 AS m2
+), summarize AS (
+    SELECT (m2).label, ((m2).metric).name, SUM(((m2).metric).value) AS value, ((m2).metric).units  FROM melt GROUP BY (m2).label, ((m2).metric).name, ((m2).metric).units
+)
+SELECT ARRAY(SELECT (label::text, (name, value, units))::lm.metric2 FROM summarize);
+
+$BODY$;
