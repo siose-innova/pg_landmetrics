@@ -7,11 +7,11 @@ Shannon's Diversity Index - devuelve menos la suma, de todas las categorías de 
 WITH  patches (geom,categ) AS (VALUES
                                (ST_GeomFromText('POLYGON((0 0,0 1,1 1,1 0,0 0))',25830),'Urbano'))
 
-SELECT lm.l_shannondiversityindex(geom) As l_shannondiversityindex FROM patches;
+SELECT l_shannondiversityindex(geom) As l_shannondiversityindex FROM patches;
 */
 
 
-CREATE OR REPLACE FUNCTION lm.l_shannondiversityindex(geom geometry)
+CREATE OR REPLACE FUNCTION l_shannondiversityindex(geom geometry)
 RETURNS double precision AS 
 $$
 
@@ -22,4 +22,4 @@ LANGUAGE SQL
 IMMUTABLE
 RETURNS NULL ON NULL INPUT;
 
-COMMENT ON FUNCTION lm.l_shannondiversityindex(geom geometry) IS 'Menos la suma de todas las categorías, la abundancia proporcional de cada categoría multiplicado por la proporción.';
+COMMENT ON FUNCTION l_shannondiversityindex(geom geometry) IS 'Menos la suma de todas las categorías, la abundancia proporcional de cada categoría multiplicado por la proporción.';

@@ -33,7 +33,6 @@ services:
     environment:
       DEFAULT_USER: pgadmin4@pgadmin.org
       DEFAULT_PASSWORD: admin
-
     networks:
       - backend
     depends_on:

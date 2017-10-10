@@ -1,6 +1,6 @@
 
 
-CREATE OR REPLACE FUNCTION lm.raise_exception(text, anyelement)
+CREATE OR REPLACE FUNCTION raise_exception(text, anyelement)
 RETURNS anyelement AS $$
 BEGIN
 RAISE EXCEPTION '%', $1;
@@ -8,4 +8,4 @@ END;
 $$ LANGUAGE plpgsql;
 
 -- SAMPLE USAGE:
--- SELECT lm.raise_exception('22023 - invalid_parameter_value');
+-- SELECT raise_exception('22023 - invalid_parameter_value');

@@ -4,19 +4,19 @@ Patch Perimeter - devuelve el perímetro del polígono, incluyendo algún vacío
 
 --SAMPLE USAGE:
 /*
-SELECT lm.p_perimeter(geom) As p_perimeter FROM lm.sample_patches;
+SELECT p_perimeter(geom) As p_perimeter FROM sample_patches;
 */
 
 
-CREATE OR REPLACE FUNCTION lm.p_perimeter(geom geometry)
-RETURNS lm.metric AS 
+CREATE OR REPLACE FUNCTION p_perimeter(geom geometry)
+RETURNS metric AS 
 $$
 
-SELECT ('Patch Perimeter'::text, St_Perimeter(geom),'m.'::text)::lm.metric;
+SELECT ('Patch Perimeter'::text, St_Perimeter(geom),'m.'::text)::metric;
 
 $$
 LANGUAGE SQL
 IMMUTABLE
 RETURNS NULL ON NULL INPUT;
 
-COMMENT ON FUNCTION lm.p_perimeter(geom geometry) IS 'Calcula el perímetro de un polígono para devolver un valor en Metros.';
+COMMENT ON FUNCTION p_perimeter(geom geometry) IS 'Calcula el perímetro de un polígono para devolver un valor en Metros.';

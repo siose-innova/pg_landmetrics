@@ -1,5 +1,5 @@
 
-CREATE TYPE lm.metric AS (
+CREATE TYPE metric AS (
     name text,
     value numeric,
     units text

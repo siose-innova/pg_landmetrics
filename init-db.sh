@@ -10,8 +10,9 @@ for DB in "$POSTGRES_DB"; do
 
 	"${psql[@]}" --dbname="$DB" <<-'EOSQL'
 
+		CREATE SCHEMA lm;
 		CREATE EXTENSION IF NOT EXISTS postgis;
-		CREATE EXTENSION IF NOT EXISTS pg_landmetrics;
+		CREATE EXTENSION IF NOT EXISTS pg_landmetrics SCHEMA lm;
 EOSQL
 done
 
