@@ -19,8 +19,5 @@ CREATE OPERATOR + (
     commutator = +
 );
 
---SHOW search_path;
---SET search_path TO "$user",public,
-
 -- SAMPLE USAGE:
 -- SELECT ('Total Class Area'::text, 10, 'Ha.'::text)::metric + ('Total Class Area'::text, 10, 'Ha.'::text)::metric
