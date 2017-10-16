@@ -49,14 +49,14 @@ CREATE OPERATOR > (
 
 
 -- Less than value
-CREATE OR REPLACE FUNCTION metric_lt(numeric, metric)
+CREATE OR REPLACE FUNCTION metric_lt(metric, numeric)
 RETURNS boolean AS
 $BODY$
 
 SELECT 
-CASE WHEN $1 > ($2).value THEN FALSE
-	WHEN $1 = ($2).value THEN FALSE
-	WHEN $1 < ($2).value THEN TRUE
+CASE WHEN ($1).value > $2 THEN FALSE
+	WHEN ($1).value = $2 THEN FALSE
+	WHEN ($1).value < $2 THEN TRUE
 ELSE raise_exception('This operation is not allowed for metrics of a different type', true)
 END;
 
@@ -64,8 +64,8 @@ $BODY$
 LANGUAGE SQL IMMUTABLE;
 
 CREATE OPERATOR < (
-    leftarg = numeric,
-    rightarg = metric,
+    leftarg = metric,
+    rightarg = numeric,
     procedure = metric_lt,
     commutator = >
 );
@@ -124,4 +124,4 @@ CREATE OPERATOR <= (
     ('Total Class Area'::text, 20, 'Ha.'::text)::metric AS doublex,
     ('NOT a Total Class Area'::text, 10, 'Ha.'::text)::metric AS notx
 )
-SELECT x > 5 FROM sample;*/
+SELECT l_totalarea(geom) FROM sample_patches_25830;*/
