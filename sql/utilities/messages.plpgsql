@@ -1,0 +1,11 @@
+
+
+CREATE OR REPLACE FUNCTION raise_exception(text, anyelement)
+RETURNS anyelement AS $$
+BEGIN
+RAISE EXCEPTION '%', $1;
+END;
+$$ LANGUAGE plpgsql;
+
+-- SAMPLE USAGE:
+-- SELECT raise_exception('22023 - invalid_parameter_value');

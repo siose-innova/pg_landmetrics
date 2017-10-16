@@ -13,9 +13,11 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_USER: postgres
       POSTGRES_DB: lm
+      PGDATA: /postgresql/data
+    command: postgres -c search_path='public,lm'
     volumes: # named volumes, use compose -v to remove them.
-      - postgres_data:/var/lib/postgresql/:rw
-      - postgres_backups:/backups
+      - postgres_data:/postgresql/data:rw
+      - postgres_backups:/postgresql/backups
     networks:
       - backend
     restart: unless-stopped
@@ -33,7 +35,6 @@ services:
     environment:
       DEFAULT_USER: pgadmin4@pgadmin.org
       DEFAULT_PASSWORD: admin
-
     networks:
       - backend
     depends_on:

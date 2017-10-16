@@ -1,5 +1,4 @@
 comment = 'A PostgreSQL extension for calculating landscape metrics.'
 default_version = '0.0.1'
-relocatable = false
+relocatable = true
 requires = 'postgis'
-schema = lm

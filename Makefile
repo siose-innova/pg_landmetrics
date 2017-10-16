@@ -20,7 +20,9 @@ ifeq ($(PG95),yes)
 
 all: $(EXTENSION)--$(EXTVERSION).sql
 
-$(EXTENSION)--$(EXTVERSION).sql: sql/types/*.sql \
+$(EXTENSION)--$(EXTVERSION).sql: sql/utilities/*.plpgsql \
+				sql/types/*.sql \
+				sql/operators/*.sql \
 				sql/functions/*.sql \
 				sql/aggregates/*.sql \
 				sql/tables/*.sql
