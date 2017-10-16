@@ -1,12 +1,10 @@
-CREATE OR REPLACE FUNCTION labeled_metrics_sum(labeled_metric, labeled_metric)
-RETURNS labeled_metric AS
+CREATE OR REPLACE FUNCTION metric_labeled_pair_sum(metric_labeled_pair, metric_labeled_pair)
+RETURNS metric_labeled_pair AS
 $BODY$
 
 SELECT 
-CASE WHEN ($1).label=($2).label 
-AND (($1).metric).name=(($2).metric).name 
-AND (($1).metric).units=(($2).metric).units  THEN (($1).label,((($1).metric).name, (($1).metric).value + (($2).metric).value, (($1).metric).name)::metric)::labeled_metric
-ELSE raise_exception('This operation is not allowed for metrics of a different label, type or units', $1)
+CASE WHEN ($1).label=($2).label THEN (($1).label, ($1).value + ($2).value)::metric_labeled_pair
+ELSE raise_exception('This operation is not allowed for metrics of a different type.', $1)
 END;
 
 $BODY$
@@ -14,10 +12,10 @@ LANGUAGE SQL IMMUTABLE;
 
 
 CREATE OPERATOR + (
-    leftarg = labeled_metric,
-    rightarg = labeled_metric,
-    procedure = labeled_metrics_sum,
+    leftarg = metric_labeled_pair,
+    rightarg = metric_labeled_pair,
+    procedure = metric_labeled_pair_sum,
     commutator = +
 );
 
--- SELECT ('agricola2',('Total Class Area'::text, 10, 'Ha.'::text)::metric)::labeled_metric + ('agricola',('Total Class Area'::text, 10, 'Ha.'::text)::metric)::labeled_metric
+-- SELECT ('agricola2',('Total Class Area'::text, 10, 'Ha.'::text)::metric)::metric_labeled + ('agricola',('Total Class Area'::text, 10, 'Ha.'::text)::metric)::metric_labeled

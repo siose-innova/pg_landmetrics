@@ -112,7 +112,7 @@ LANGUAGE SQL IMMUTABLE;
 CREATE OPERATOR <= (
     leftarg = numeric,
     rightarg = metric,
-    procedure = metric_lt,
+    procedure = metric_lte,
     commutator = >=
 );
 

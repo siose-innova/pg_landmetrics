@@ -6,10 +6,10 @@ RETURNS boolean AS
 $BODY$
 
 SELECT 
-CASE WHEN ($1).name=($2).name AND ($1).value > ($2).value AND ($1).units=($2).units THEN TRUE
-	WHEN ($1).name=($2).name AND ($1).value = ($2).value AND ($1).units=($2).units THEN FALSE
-	WHEN ($1).name=($2).name AND ($1).value < ($2).value AND ($1).units=($2).units  THEN FALSE
-ELSE raise_exception('This operation is not allowed for metrics of a different type or units', true)
+CASE WHEN ($1).id=($2).id AND ($1).value > ($2).value THEN TRUE
+	WHEN ($1).id=($2).id AND ($1).value = ($2).value THEN FALSE
+	WHEN ($1).id=($2).id AND ($1).value < ($2).value THEN FALSE
+ELSE raise_exception('This operation is not allowed for metrics of a different type.', true)
 END;
 
 $BODY$
@@ -29,9 +29,9 @@ RETURNS boolean AS
 $BODY$
 
 SELECT 
-CASE WHEN ($1).name=($2).name AND ($1).value > ($2).value AND ($1).units=($2).units  THEN FALSE
-	WHEN ($1).name=($2).name AND ($1).value = ($2).value AND ($1).units=($2).units THEN FALSE
-	WHEN ($1).name=($2).name AND ($1).value < ($2).value AND ($1).units=($2).units THEN TRUE
+CASE WHEN ($1).id=($2).id AND ($1).value > ($2).value THEN FALSE
+	WHEN ($1).id=($2).id AND ($1).value = ($2).value THEN FALSE
+	WHEN ($1).id=($2).id AND ($1).value < ($2).value THEN TRUE
 ELSE raise_exception('This operation is not allowed for metrics of a different type', true)
 END;
 
@@ -52,10 +52,10 @@ RETURNS boolean AS
 $BODY$
 
 SELECT 
-CASE WHEN ($1).name=($2).name AND ($1).value > ($2).value AND ($1).units=($2).units THEN TRUE
-	WHEN ($1).name=($2).name AND ($1).value = ($2).value AND ($1).units=($2).units THEN TRUE
-	WHEN ($1).name=($2).name AND ($1).value < ($2).value AND ($1).units=($2).units THEN FALSE
-ELSE raise_exception('This operation is not allowed for metrics of a different type', true)
+CASE WHEN ($1).id=($2).id AND ($1).value > ($2).value THEN TRUE
+	WHEN ($1).id=($2).id AND ($1).value = ($2).value THEN TRUE
+	WHEN ($1).id=($2).id AND ($1).value < ($2).value THEN FALSE
+ELSE raise_exception('This operation is not allowed for metrics of a different type.', true)
 END;
 
 $BODY$
@@ -75,10 +75,10 @@ RETURNS boolean AS
 $BODY$
 
 SELECT 
-CASE WHEN ($1).name=($2).name AND ($1).value > ($2).value AND ($1).units=($2).units THEN FALSE
-	WHEN ($1).name=($2).name AND ($1).value = ($2).value AND ($1).units=($2).units THEN TRUE
-	WHEN ($1).name=($2).name AND ($1).value < ($2).value AND ($1).units=($2).units THEN TRUE
-ELSE raise_exception('This operation is not allowed for metrics of a different type', true)
+CASE WHEN ($1).id=($2).id AND ($1).value > ($2).value THEN FALSE
+	WHEN ($1).id=($2).id AND ($1).value = ($2).value THEN TRUE
+	WHEN ($1).id=($2).id AND ($1).value < ($2).value THEN TRUE
+ELSE raise_exception('This operation is not allowed for metrics of a different type.', true)
 END;
 
 $BODY$
