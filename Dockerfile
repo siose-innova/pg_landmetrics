@@ -11,6 +11,7 @@ ADD pg_landmetrics.control pg_landmetrics.control
 
 RUN make
 RUN make install
+#RUN make install && make installcheck
 
 WORKDIR /
 RUN rm -rf /install-ext
