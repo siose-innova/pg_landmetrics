@@ -1,0 +1,52 @@
+sequenceDiagram
+     participant User
+     participant Docker compose
+     participant Docker Engine
+     participant PostgreSQL/PostGIS
+     participant PgAdmin
+
+		activate User
+
+   alt ext was modified
+        User->>Docker compose: docker-compose build
+		activate Docker compose
+        Docker compose-->>User: succesful build
+		deactivate Docker compose
+    else ext not modified
+        User->>Docker compose: docker-compose up
+		deactivate User
+		activate Docker compose
+    end
+
+
+    Docker compose-x PostgreSQL/PostGIS: docker run
+		activate PostgreSQL/PostGIS
+    PostgreSQL/PostGIS -->> User: succesful connection
+		deactivate PostgreSQL/PostGIS
+    Docker compose-x PgAdmin: docker run
+		activate PgAdmin
+    PgAdmin -->> User: succesful connection
+		deactivate Docker compose
+		deactivate PgAdmin
+
+
+    loop while User queries
+        User->>PgAdmin: send query
+		activate PgAdmin
+		activate User
+	PgAdmin ->> PostgreSQL/PostGIS: query
+		activate PostgreSQL/PostGIS
+	PostgreSQL/PostGIS ->> PgAdmin: result
+		deactivate PostgreSQL/PostGIS
+	PgAdmin ->> User: view result
+		deactivate PgAdmin
+		deactivate User
+    end
+
+
+	User ->> Docker compose: docker-compose down
+		activate User
+		activate Docker compose
+	Docker compose -->>User: shut down
+		deactivate User
+		deactivate Docker compose
