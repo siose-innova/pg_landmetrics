@@ -2,7 +2,7 @@
 Percentage of Landscape - devuelve la suma de las áreas (m²) de todos los polígonos correspondientes al tipo de polígono dividido por el área total (m²) del paisaje, multiplicado por 100 (unidades: Porcentaje).
 */
 
---SAMPLE USAGE:
+-- SAMPLE USAGE:
 /*
 SELECT c_percentagelandscape(geom, category) As c_percentagelandscape, category FROM sample_patches;
 */

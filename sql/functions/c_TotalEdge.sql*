@@ -2,7 +2,7 @@
 Total Edge - devuelve la suma de las longitudes (m) de todos los segmentos de los bordes correspondientes al tipo de polígono (categoría) (unidades: Metros).
 */
 
---SAMPLE USAGE:
+-- SAMPLE USAGE:
 /*
 SELECT c_totaledge(geom, category) As c_totaledge, category FROM sample_patches;
 */

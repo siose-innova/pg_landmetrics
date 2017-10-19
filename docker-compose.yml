@@ -1,5 +1,6 @@
 version: '2'
 services:
+
   db:
     # comment on build if want to use the dockerhub build
     build:

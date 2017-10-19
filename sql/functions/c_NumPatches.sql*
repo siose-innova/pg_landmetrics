@@ -2,7 +2,7 @@
 Number of Patches - devuelve el número de polígonos que corresponden a una categoría.
 */
 
---SAMPLE USAGE:
+-- SAMPLE USAGE:
 /*
 SELECT c_numpatches(geom, category) As c_numpatches, category FROM sample_patches;
 */
