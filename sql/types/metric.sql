@@ -46,6 +46,8 @@ INSERT INTO metric_meta(sname,lname,unit_id) VALUES ('PR','Patch Richness',5);
 INSERT INTO metric_meta(sname,lname,unit_id) VALUES ('PRD','Patch Richness Density',7);
 INSERT INTO metric_meta(sname,lname,unit_id) VALUES ('SHDI','Shannon Diversity Index',5);
 INSERT INTO metric_meta(sname,lname,unit_id) VALUES ('SHIDI','Simpson Diversity Index',5);
+INSERT INTO metric_meta(sname,lname,unit_id) VALUES ('PC','Proportion Class',4);
+INSERT INTO metric_meta(sname,lname,unit_id) VALUES ('PL','Proportion Landscape',4);
 
 
 
