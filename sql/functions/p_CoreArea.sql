@@ -4,8 +4,8 @@ Core Area - devuelve el área interior del polígono que está más allá de la 
 
 -- SAMPLE USAGE:
 /*
-SELECT (p_corearea(geom)).value FROM sample_patches_25830;
-SELECT (p_corearea(geom)).value FROM sample_patches_4326;
+SELECT (p_corearea(geom, 50)).value FROM sample_patches_25830;
+SELECT (p_corearea(geom, 50)).value FROM sample_patches_4326;
 */
 
 

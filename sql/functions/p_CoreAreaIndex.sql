@@ -4,8 +4,8 @@ Core Area Index - devuelve el área del núcleo del polígono (m²) dividido por
 
 -- SAMPLE USAGE:
 /*
-SELECT (p_coreareaindex(geom)).value FROM sample_patches_25830;
-SELECT (p_coreareaindex(geom)).value FROM sample_patches_4326;
+SELECT (p_coreareaindex(geom, 50)).value FROM sample_patches_25830;
+SELECT (p_coreareaindex(geom, 50)).value FROM sample_patches_4326;
 */
 
 

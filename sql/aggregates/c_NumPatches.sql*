@@ -1,0 +1,51 @@
+/*
+Number of Patches - devuelve el número de polígonos que corresponden a una categoría.
+*/
+
+-- SAMPLE USAGE:
+/*
+SELECT c_numpatches_state(ARRAY[('Agricultural area',('Number of Patches'::text, 10, 'Ha.'::text))::labeled_metric], geom, category) FROM sample_patches_25830;
+SELECT c_numpatches_state(ARRAY[('Agricultural area',('Number of Patches'::text, 10, 'Ha.'::text))::labeled_metric], geom, category) FROM sample_patches_4326;
+*/
+
+
+
+CREATE OR REPLACE FUNCTION c_numpatches_state(
+	current_state metric_labeled,
+	geom geometry,
+	category text)
+    RETURNS metric_labeled
+    LANGUAGE 'sql'
+
+AS 
+$BODY$
+
+WITH inputs AS (
+    	SELECT current_state AS cstate
+), melt AS (
+    	SELECT unnest((cstate).pairs) AS m2 FROM inputs
+    	UNION 
+	SELECT (category, (St_NumGeometries(geom)).value)::metric_labeled_pair AS m2
+), summarize AS (
+	SELECT (m2).label, SUM((m2).value) AS value FROM melt GROUP BY (m2).label
+)
+SELECT (15, ARRAY(SELECT (label, value)::metric_labeled_pair FROM summarize))::metric_labeled;
+
+$BODY$;
+
+
+-- SAMPLE USAGE
+-- SELECT c_numpatches(geom,category) FROM sample_patches_25830;
+
+CREATE AGGREGATE c_numpatches(geometry, text)(
+    SFUNC=c_numpatches_state,
+    STYPE=metric_labeled,
+    INITCOND='(15,{})'
+);
+
+COMMENT ON AGGREGATE c_numpatches(geom geometry, category text) IS 'Calcula el número de polígonos de la misma categoría.';
+
+
+
+
+
