@@ -4,8 +4,8 @@ Number of Core Areas - devuelve el número de núcleos de las áreas disyuntivas
 
 -- SAMPLE USAGE:
 /*
-SELECT (p_numcoreareas(geom)).value FROM sample_patches_25830;
-SELECT (p_numcoreareas(geom)).value FROM sample_patches_4326;
+SELECT (p_numcoreareas(geom, 50)).value FROM sample_patches_25830;
+SELECT (p_numcoreareas(geom, 50)).value FROM sample_patches_4326;
 */
 
 
