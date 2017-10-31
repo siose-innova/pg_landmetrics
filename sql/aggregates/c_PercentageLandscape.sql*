@@ -5,6 +5,7 @@ Percentage of Landscape - devuelve la suma de las áreas (m²) de todos los pol�
 -- SAMPLE USAGE:
 /*
 SELECT c_percentagelandscape_state(ARRAY[('Agricultural area',('Percentage of Landscape'::text, 10, '%'::text))::labeled_metric], geom, category) FROM sample_patches_25830;
+SELECT c_percentagelandscape_state(ARRAY[('Agricultural area',('Percentage of Landscape'::text, 10, '%'::text))::labeled_metric], geom, category) FROM sample_patches_4326;
 */
 
 CREATE OR REPLACE FUNCTION c_percentagelandscape_state(
