@@ -2,7 +2,7 @@
 Total Core Area - devuelve la suma de los núcleos de las áreas (m²) de cada polígono correspondiente al tipo de polígono, dividido por 10.000 (unidades: Hectáreas).
 */
 
---SAMPLE USAGE:
+-- SAMPLE USAGE:
 /*
 SELECT c_totalcorearea(geom, category) As c_totalcorearea, category FROM sample_patches;
 */

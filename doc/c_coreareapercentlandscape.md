@@ -10,7 +10,7 @@ geometry c_coreareapercentlandscape(geometry geom, float radius_buffer);
 ```
 
 ```tex
-\[PLAND= \frac{\sum_{j=1}^{n}{a_{ij}}^{c}}{A}\left ( 100 \right )\]
+\[CPLAND= \frac{\sum_{j=1}^{n}{a_{ij}}^{c}}{A}\left ( 100 \right )\]
 ```
 
 ## Descripción

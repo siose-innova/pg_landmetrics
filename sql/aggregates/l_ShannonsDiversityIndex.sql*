@@ -1,0 +1,29 @@
+/*
+Shannon's Diversity Index - devuelve menos la suma, de todas las categorías de los polígonos, la abundancia proporcional de cada tipo de polígono multiplicado por esa proporción.
+*/
+
+-- SAMPLE USAGE:
+/*
+SELECT (l_shannondiversityindex(geom)).value FROM sample_patches_25830;
+SELECT (l_shannondiversityindex(geom)).value FROM sample_patches_4326;
+*/
+
+CREATE OR REPLACE FUNCTION l_shannondiversityindex_state(metric,geometry)
+    RETURNS metric AS
+$$
+	SELECT $1 + ;
+$$
+LANGUAGE 'sql' IMMUTABLE;
+
+
+CREATE AGGREGATE l_shannondiversityindex(geometry)(
+    SFUNC=l_shannondiversityindex_state,
+    STYPE=metric,
+    INITCOND='(24,0)'
+);
+
+COMMENT ON AGGREGATE l_shannondiversityindex(geometry) IS 'Menos la suma de todas las categorías, la abundancia proporcional de cada categoría multiplicado por la proporción.';
+
+
+
+SELECT -1*(SUM(COUNT(DISTINCT category))*(((St_Area(geom)/SUM(St_Area(geom))*100)*ln((St_Area(geom)/SUM(St_Area(geom))*100))

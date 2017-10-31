@@ -10,7 +10,7 @@ power(label)
 ```
 
 ```tex
-\[SIDI= 1-\sum_{i=1}^{m} P{_{i}}^{2}\]
+\[SHIDI= 1-\sum_{i=1}^{m} P{_{i}}^{2}\]
 ```
 
 ## Descripción

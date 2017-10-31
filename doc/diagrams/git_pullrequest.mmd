@@ -1,0 +1,57 @@
+sequenceDiagram
+     participant Upstream(GitHub)
+     participant Rep. User(GitHub)
+     participant Git(local)
+     participant pg_landmetrics
+
+	Upstream(GitHub)->> Rep. User(GitHub): fork
+		activate Rep. User(GitHub)
+
+   alt no local copy
+	Git(local)->> Rep. User(GitHub): get clone
+		activate Git(local)
+	Rep. User(GitHub)-->> Git(local): latest version
+   else not updated
+	Git(local)->> Rep. User(GitHub): check changes
+	Rep. User(GitHub)-->>Git(local): latest version
+		deactivate Rep. User(GitHub)
+   end
+
+	Git(local) ->> pg_landmetrics: latest version
+		deactivate Git(local)
+	activate pg_landmetrics
+
+   loop Git collaborative workflow
+
+     loop while user edits
+	pg_landmetrics ->> pg_landmetrics: edit
+	pg_landmetrics ->> Git(local): commit changes
+		activate Git(local)
+	Git(local)-->> pg_landmetrics: hash
+		deactivate pg_landmetrics
+     end
+
+	Git(local)->>Rep. User(GitHub): git push
+		deactivate Git(local)
+		activate Rep. User(GitHub)
+
+	Rep. User(GitHub)->>Upstream(GitHub):  pull request
+		deactivate Rep. User(GitHub)
+		activate Upstream(GitHub)
+
+     opt when accepted 
+		activate Rep. User(GitHub)
+	Git(local)->> Upstream(GitHub):  fetch + merge
+		activate Git(local)
+	Upstream(GitHub)-->> Git(local):  synchronized
+		deactivate Upstream(GitHub)
+		activate Upstream(GitHub)
+	Git(local)->>Rep. User(GitHub): git push
+		activate Rep. User(GitHub)
+	Rep. User(GitHub)-->>Git(local): changes OK
+		deactivate Rep. User(GitHub)
+	deactivate Git(local)
+
+     end
+
+   end

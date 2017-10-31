@@ -2,22 +2,45 @@
 Percentage of Landscape - devuelve la suma de las áreas (m²) de todos los polígonos correspondientes al tipo de polígono dividido por el área total (m²) del paisaje, multiplicado por 100 (unidades: Porcentaje).
 */
 
---SAMPLE USAGE:
+-- SAMPLE USAGE:
 /*
-SELECT c_percentagelandscape(geom, category) As c_percentagelandscape, category FROM sample_patches;
+SELECT c_percentagelandscape_state(ARRAY[('Agricultural area',('Percentage of Landscape'::text, 10, '%'::text))::labeled_metric], geom, category) FROM sample_patches_25830;
 */
 
+CREATE OR REPLACE FUNCTION c_percentagelandscape_state(
+	current_state metric_labeled,
+	geom geometry,
+	category text)
+    RETURNS metric_labeled
+    LANGUAGE 'sql'
 
-CREATE OR REPLACE FUNCTION c_percentagelandscape(geom geometry, category text)
-RETURNS metric AS 
-$$
+AS 
+$BODY$
 
-SELECT ('Percentage of Landscape'::text, (SUM(St_Area(geom))/SUM(St_Area(geom)))*100,'%'::text)::metric GROUP BY category;
+WITH inputs AS (
+    	SELECT current_state AS cstate
+), melt AS (
+    	SELECT unnest((cstate).pairs) AS m2 FROM inputs
+    	UNION 
+	SELECT (category, (p_area(geom)).value)::metric_labeled_pair AS m2
+), summarize AS (
+	SELECT (m2).label, SUM((m2).value) AS value FROM melt GROUP BY (m2).label
+)
+SELECT (10, ARRAY(SELECT (label, value)::metric_labeled_pair FROM summarize))::metric_labeled;
 
-$$
-LANGUAGE SQL
-IMMUTABLE
-RETURNS NULL ON NULL INPUT;
+$BODY$;
 
-COMMENT ON FUNCTION c_percentagelandscape(geom geometry, category text) IS 'Calcula la suma de las áreas de los polígonos de la misma categoría dividido por el área total del paisaje, multiplicado por 100 para devolver un valor en porcentaje.';
 
+-- SAMPLE USAGE
+-- SELECT c_percentagelandscape(geom,category) FROM sample_patches_25830;
+
+CREATE AGGREGATE c_percentagelandscape(geometry, text)(
+    SFUNC=c_totalarea_state,
+    STYPE=metric_labeled,
+    INITCOND='(10,{})'
+);
+
+COMMENT ON AGGREGATE c_percentagelandscape(geom geometry, category text) IS 'Calcula la suma de las áreas de los polígonos de la misma categoría dividido por el área total del paisaje, multiplicado por 100 para devolver un valor en porcentaje.';
+
+
+-- SELECT ('Percentage of Landscape'::text, (SUM(St_Area(geom))/SUM(St_Area(geom)))*100,'%'::text)::metric GROUP BY category;
