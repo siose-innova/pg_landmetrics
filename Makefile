@@ -21,6 +21,7 @@ ifeq ($(PG95),yes)
 all: $(EXTENSION)--$(EXTVERSION).sql
 
 $(EXTENSION)--$(EXTVERSION).sql: sql/utilities/*.plpgsql \
+				 sql/utilities/*.sql \
 				sql/types/*.sql \
 				sql/operators/*.sql \
 				sql/functions/*.sql \
